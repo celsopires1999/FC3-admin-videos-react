@@ -24,9 +24,14 @@ const category: Category = {
 export const initialState = [
   category,
   { ...category, id: "116b3829-dad3-4466-b211-7bc771843869", name: "Peach" },
-  { ...category, id: "216b3829-dad3-4466-b211-7bc771843869", name: "Apple" },
+  {
+    ...category,
+    id: "216b3829-dad3-4466-b211-7bc771843869",
+    name: "Apple",
+    is_active: false,
+  },
   { ...category, id: "316b3829-dad3-4466-b211-7bc771843869", name: "Banana" },
-  { ...category, id: "416b3829-dad3-4466-b211-7bc771843869" },
+  { ...category, id: "416b3829-dad3-4466-b211-7bc771843869", name: "Orange" },
 ];
 
 const categoriesSlice = createSlice({
