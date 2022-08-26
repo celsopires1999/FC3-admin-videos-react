@@ -33,6 +33,7 @@ export const CategoryList = () => {
       field: "name",
       headerName: "Name",
       flex: 1,
+      renderCell: renderNameCell,
     },
     {
       field: "description",
@@ -59,6 +60,17 @@ export const CategoryList = () => {
     },
   ];
 
+  function renderNameCell(rowData: GridRenderCellParams) {
+    return (
+      <Link
+        style={{ textDecoration: "none" }}
+        to={`/categories/edit/${rowData.id}`}
+      >
+        <Typography color={"primary"}>{rowData.value}</Typography>
+      </Link>
+    );
+  }
+
   function renderIsActiveCell(rowData: GridRenderCellParams) {
     return (
       <Typography color={rowData.value ? "primary" : "secondary"}>
@@ -79,6 +91,13 @@ export const CategoryList = () => {
     );
   }
 
+  const gridToolbarComponentsProps = {
+    toolbar: {
+      showQuickFilter: true,
+      quickFilterProps: { debounceMs: 500 },
+    },
+  };
+
   return (
     <Box maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box display="flex" justifyContent="flex-end">
@@ -92,24 +111,19 @@ export const CategoryList = () => {
           New Category
         </Button>
       </Box>
-      <div style={{ height: 300, width: "100%" }}>
+      <Box sx={{ display: "flex", height: 500 }}>
         <DataGrid
           rows={rows}
           columns={columns}
-          disableColumnSelector={true}
           disableColumnFilter={true}
+          disableColumnSelector={true}
           disableDensitySelector={true}
           disableSelectionOnClick={true}
-          rowsPerPageOptions={[2, 10, 20, 50, 100]}
           components={{ Toolbar: GridToolbar }}
-          componentsProps={{
-            toolbar: {
-              showQuickFilter: true,
-              quickFilterProps: { debounceMs: 500 },
-            },
-          }}
+          rowsPerPageOptions={[2, 10, 20, 50, 100]}
+          componentsProps={gridToolbarComponentsProps}
         />
-      </div>
+      </Box>
     </Box>
   );
 };

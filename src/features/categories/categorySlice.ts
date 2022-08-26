@@ -11,7 +11,7 @@ interface Category {
   updated_at: string;
 }
 
-const category: Category = {
+const dummyData: Category = {
   id: "016b3829-dad3-4466-b211-7bc771843869",
   name: "Olive",
   description: "Earum quo at dolor tempore nisi.",
@@ -22,16 +22,28 @@ const category: Category = {
 };
 
 export const initialState = [
-  category,
-  { ...category, id: "116b3829-dad3-4466-b211-7bc771843869", name: "Peach" },
+  dummyData,
   {
-    ...category,
+    ...dummyData,
+    id: "116b3829-dad3-4466-b211-7bc771843869",
+    name: "Peach",
+  },
+  {
+    ...dummyData,
     id: "216b3829-dad3-4466-b211-7bc771843869",
     name: "Apple",
     is_active: false,
   },
-  { ...category, id: "316b3829-dad3-4466-b211-7bc771843869", name: "Banana" },
-  { ...category, id: "416b3829-dad3-4466-b211-7bc771843869", name: "Orange" },
+  {
+    ...dummyData,
+    id: "316b3829-dad3-4466-b211-7bc771843869",
+    name: "Banana",
+  },
+  {
+    ...dummyData,
+    id: "416b3829-dad3-4466-b211-7bc771843869",
+    name: "Orange",
+  },
 ];
 
 const categoriesSlice = createSlice({
@@ -45,4 +57,21 @@ const categoriesSlice = createSlice({
 });
 
 export const selectCategories = (state: RootState) => state.categories;
+
+export const selectCategoryById = (state: RootState, id: string) => {
+  const category = state.categories.find((c) => c.id === id);
+
+  return (
+    category || {
+      id: "",
+      name: "",
+      description: "",
+      is_active: false,
+      deleted_at: "",
+      created_at: "",
+      updated_at: "",
+    }
+  );
+};
+
 export default categoriesSlice.reducer;
