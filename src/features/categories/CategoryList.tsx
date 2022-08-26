@@ -1,5 +1,10 @@
 import { Box, Button, IconButton, Typography } from "@mui/material";
-import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
+import {
+  DataGrid,
+  GridColDef,
+  GridRenderCellParams,
+  GridToolbar,
+} from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import { selectCategories } from "./categorySlice";
@@ -89,9 +94,20 @@ export const CategoryList = () => {
       </Box>
       <div style={{ height: 300, width: "100%" }}>
         <DataGrid
-          rowsPerPageOptions={[2, 10, 20, 50, 100]}
           rows={rows}
           columns={columns}
+          disableColumnSelector={true}
+          disableColumnFilter={true}
+          disableDensitySelector={true}
+          disableSelectionOnClick={true}
+          rowsPerPageOptions={[2, 10, 20, 50, 100]}
+          components={{ Toolbar: GridToolbar }}
+          componentsProps={{
+            toolbar: {
+              showQuickFilter: true,
+              quickFilterProps: { debounceMs: 500 },
+            },
+          }}
         />
       </div>
     </Box>
