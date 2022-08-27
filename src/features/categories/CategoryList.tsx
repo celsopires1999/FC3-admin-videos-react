@@ -9,10 +9,12 @@ import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { deleteCategory, selectCategories } from "./categorySlice";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useSnackbar } from "notistack";
 
 export const CategoryList = () => {
   const categories = useAppSelector(selectCategories);
   const dispatch = useAppDispatch();
+  const { enqueueSnackbar } = useSnackbar();
 
   interface GridRowsProps {
     id: string;
@@ -95,6 +97,7 @@ export const CategoryList = () => {
 
   function handleDeleteCategory(id: string) {
     dispatch(deleteCategory(id));
+    enqueueSnackbar(`Category deleted successfully`, { variant: "success" });
   }
 
   const gridToolbarComponentsProps = {
