@@ -6,12 +6,14 @@ import {
   GridToolbar,
 } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../app/hooks";
-import { selectCategories } from "./categorySlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { deleteCategory, selectCategories } from "./categorySlice";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 export const CategoryList = () => {
   const categories = useAppSelector(selectCategories);
+  const dispatch = useAppDispatch();
+
   interface GridRowsProps {
     id: string;
     name: string;
@@ -79,16 +81,20 @@ export const CategoryList = () => {
     );
   }
 
-  function renderActionsCell(_rowData: GridRenderCellParams) {
+  function renderActionsCell(rowData: GridRenderCellParams) {
     return (
       <IconButton
         color="secondary"
-        onClick={() => console.log("clicked")}
+        onClick={() => handleDeleteCategory(rowData.value)}
         aria-label="delete"
       >
         <DeleteIcon />
       </IconButton>
     );
+  }
+
+  function handleDeleteCategory(id: string) {
+    dispatch(deleteCategory(id));
   }
 
   const gridToolbarComponentsProps = {
@@ -100,6 +106,7 @@ export const CategoryList = () => {
 
   return (
     <Box maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+      {/* New Category Button*/}
       <Box display="flex" justifyContent="flex-end">
         <Button
           variant="contained"
@@ -111,6 +118,7 @@ export const CategoryList = () => {
           New Category
         </Button>
       </Box>
+      {/* Category Table */}
       <Box sx={{ display: "flex", height: 500 }}>
         <DataGrid
           rows={rows}

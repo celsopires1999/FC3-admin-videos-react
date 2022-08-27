@@ -50,9 +50,37 @@ const categoriesSlice = createSlice({
   name: "categories",
   initialState: initialState,
   reducers: {
-    createCategory(state, action) {},
-    updateCategory(state, action) {},
-    deleteCategory(state, action) {},
+    createCategory(state, action) {
+      state.push(action.payload);
+    },
+    updateCategory(state, action) {
+      // find index on state of categorySlice";
+      const index = state.findIndex(
+        (categorie) => categorie.id === action.payload.id
+      );
+
+      if (index === -1) {
+        throw new Error(
+          `categorie Id ${action.payload.id} not found on deleteCategory`
+        );
+      }
+      // update category on state of categorySlice
+      state[index] = action.payload;
+    },
+    deleteCategory(state, action) {
+      // find index on state of categorySlice";
+      const index = state.findIndex(
+        (categorie) => categorie.id === action.payload
+      );
+
+      if (index === -1) {
+        throw new Error(
+          `categorie Id ${action.payload} not found on deleteCategory`
+        );
+      }
+      // delete category on state
+      state.splice(index, 1);
+    },
   },
 });
 
@@ -75,3 +103,5 @@ export const selectCategoryById = (state: RootState, id: string) => {
 };
 
 export default categoriesSlice.reducer;
+export const { createCategory, updateCategory, deleteCategory } =
+  categoriesSlice.actions;
