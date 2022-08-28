@@ -15,7 +15,7 @@ type Props = {
   data: Results | undefined;
   perPage: number;
   isFetching: boolean;
-  rowsPerPage?: number;
+  rowsPerPage?: number[];
 
   handleOnPageChange: (page: number) => void;
   handleFilterChange: (filterModel: GridFilterModel) => void;
@@ -126,7 +126,7 @@ export function CategoriesTable({
   const rowCount = data?.meta.total ?? 0;
 
   return (
-    <Box sx={{ display: "flex", height: 600 }}>
+    <Box sx={{ display: "flex", height: 500 }}>
       <DataGrid
         rows={rows}
         pagination={true}
@@ -141,10 +141,10 @@ export function CategoriesTable({
         disableColumnSelector={true}
         disableDensitySelector={true}
         disableSelectionOnClick={true}
+        rowsPerPageOptions={rowsPerPage}
         onPageChange={handleOnPageChange}
         components={{ Toolbar: GridToolbar }}
         onFilterModelChange={handleFilterChange}
-        rowsPerPageOptions={[2, 10, 20, 50, 100]}
         onPageSizeChange={handleOnPageSizeChange}
         componentsProps={gridToolbarComponentsProps}
       />
