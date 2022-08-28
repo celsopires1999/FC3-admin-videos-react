@@ -10,23 +10,32 @@ import {
 import { CategoriesTable } from "./components/CategoriesTable";
 
 export const CategoryList = () => {
-  const { data, isFetching, error } = useGetCategoriesQuery();
-  const [deleteCategory, deleteCategoryStatus] = useDeleteCategoryMutation();
-  const { enqueueSnackbar } = useSnackbar();
-  const [perPage] = useState<number>(10);
+  const [page, setPage] = useState<number>(1);
+  const [perPage, setPerPage] = useState<number>(10);
   const [search, setSearch] = useState<string>("");
   const [rowsPerPage] = useState<number[]>([10, 25, 50, 100]);
 
-  function handleOnPageChange(page: number) {
-    console.log(page);
+  const options = { page, perPage, search };
+
+  const { data, isFetching, error } = useGetCategoriesQuery(options);
+  const [deleteCategory, deleteCategoryStatus] = useDeleteCategoryMutation();
+  const { enqueueSnackbar } = useSnackbar();
+
+  function handleOnPageChange(_page: number): void {
+    setPage(_page + 1);
   }
 
-  function handleFilterChange(filterModel: GridFilterModel) {
-    console.log(filterModel);
+  function handleFilterChange(filterModel: GridFilterModel): void {
+    if (filterModel.quickFilterValues?.length) {
+      const _search = filterModel.quickFilterValues.join(" ");
+      setSearch(_search);
+    } else {
+      setSearch("");
+    }
   }
 
   function handleOnPageSizeChange(_perPage: number) {
-    console.log(_perPage);
+    setPerPage(_perPage);
   }
 
   async function handleDeleteCategory(id: string) {

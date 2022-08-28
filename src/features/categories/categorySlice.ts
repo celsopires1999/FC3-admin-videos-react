@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { Results } from "../../types/Category";
+import { CategoryParams, Results } from "../../types/Category";
 import { apiSlice } from "../api/apiSlice";
 
 export interface Category {
@@ -15,17 +15,10 @@ export interface Category {
 
 const endpointUrl = "/categories";
 
-function deleteCategoryMutation(category: Category) {
-  return {
-    url: `${endpointUrl}/${category.id}`,
-    method: "DELETE",
-  };
-}
-
 export const categoriesApiSlice = apiSlice.injectEndpoints({
   endpoints: ({ query, mutation }) => ({
-    getCategories: query<Results, void>({
-      query: () => `${endpointUrl}`,
+    getCategories: query<Results, CategoryParams>({
+      query: getCategories,
       providesTags: ["Categories"],
     }),
     deleteCategory: mutation<Results, { id: string }>({
@@ -34,6 +27,41 @@ export const categoriesApiSlice = apiSlice.injectEndpoints({
     }),
   }),
 });
+
+function getCategories({ page = 1, perPage = 10, search = "" }) {
+  const params = { page, perPage, search, isActive: true };
+
+  return `${endpointUrl}?${parseQueryParams(params)}`;
+}
+
+function parseQueryParams(params: CategoryParams): string {
+  const query = new URLSearchParams();
+
+  if (params.page) {
+    query.append("page", params.page.toString());
+  }
+
+  if (params.perPage) {
+    query.append("per_page", params.perPage.toString());
+  }
+
+  if (params.search) {
+    query.append("search", params.search);
+  }
+
+  if (params.isActive) {
+    query.append("is_active", params.isActive.toString());
+  }
+
+  return query.toString();
+}
+
+function deleteCategoryMutation(category: Category) {
+  return {
+    url: `${endpointUrl}/${category.id}`,
+    method: "DELETE",
+  };
+}
 
 const dummyData: Category = {
   id: "016b3829-dad3-4466-b211-7bc771843869",
