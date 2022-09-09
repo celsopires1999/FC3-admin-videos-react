@@ -12,10 +12,10 @@ export const CategoryCreate = () => {
     id: "",
     name: "",
     description: "",
-    isActive: false,
-    deletedAt: "",
-    createdAt: "",
-    updatedAt: "",
+    is_active: false,
+    deleted_at: "",
+    created_at: "",
+    updated_at: "",
   });
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

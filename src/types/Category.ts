@@ -2,10 +2,10 @@ export interface Category {
   id: string;
   name: string;
   description: string | null;
-  isActive: boolean;
-  deletedAt: string | null;
-  createdAt: string;
-  updatedAt: string;
+  is_active: boolean;
+  deleted_at: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface Result {

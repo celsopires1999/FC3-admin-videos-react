@@ -17,10 +17,10 @@ export const CategoryEdit = () => {
     id: "",
     name: "",
     description: "",
-    isActive: false,
-    deletedAt: "",
-    createdAt: "",
-    updatedAt: "",
+    is_active: false,
+    deleted_at: "",
+    created_at: "",
+    updated_at: "",
   });
   const { enqueueSnackbar } = useSnackbar();
 
