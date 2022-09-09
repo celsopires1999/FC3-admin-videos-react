@@ -65,6 +65,7 @@ export const CategoryForm = ({
                   <Switch
                     name="is_active"
                     color="secondary"
+                    disabled={isDisabled}
                     onChange={handleToggle}
                     checked={category.is_active}
                     inputProps={{ "aria-label": "controlled" }}

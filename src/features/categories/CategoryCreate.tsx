@@ -1,14 +1,12 @@
 import { Box, Paper, Typography } from "@mui/material";
 import { useSnackbar } from "notistack";
-import { useState } from "react";
-import { useAppDispatch } from "../../app/hooks";
-import { Category, createCategory } from "./categorySlice";
+import { useEffect, useState } from "react";
+import { Category, useCreateCategoryMutation } from "./categorySlice";
 import { CategoryForm } from "./components/CategoryForm";
 
 export const CategoryCreate = () => {
-  const [isDisabled, setIsDisabled] = useState(false);
-  const dispatch = useAppDispatch();
   const { enqueueSnackbar } = useSnackbar();
+  const [createCategory, status] = useCreateCategoryMutation();
   const [categoryState, setCategoryState] = useState<Category>({
     id: "",
     name: "",
@@ -21,8 +19,7 @@ export const CategoryCreate = () => {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    dispatch(createCategory(categoryState));
-    enqueueSnackbar(`Category creates successfully!`, { variant: "success" });
+    await createCategory(categoryState);
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,20 +32,26 @@ export const CategoryCreate = () => {
     setCategoryState({ ...categoryState, [name]: checked });
   };
 
+  useEffect(() => {
+    if (status.isSuccess) {
+      enqueueSnackbar(`Category created successfully`, { variant: "success" });
+    }
+    if (status.error) {
+      enqueueSnackbar(`Category not created`, { variant: "error" });
+    }
+  }, [enqueueSnackbar, status.error, status.isSuccess]);
+
   return (
     <Box>
-      {/* Component */}
       <Paper>
-        {/* Main Label */}
         <Box p={2}>
           <Box mb={2}>
             <Typography variant="h4">Create Category</Typography>
           </Box>
         </Box>
-        {/* Form */}
         <CategoryForm
           isLoading={false}
-          isDisabled={isDisabled}
+          isDisabled={status.isLoading}
           category={categoryState}
           handleSubmit={handleSubmit}
           handleChange={handleChange}

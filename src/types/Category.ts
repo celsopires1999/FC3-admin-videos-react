@@ -1,5 +1,9 @@
 import { Category } from "../features/categories/categorySlice";
 
+export interface Result {
+  data: Category;
+}
+
 export interface Results {
   meta: Meta;
   links: Links;
