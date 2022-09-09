@@ -2,7 +2,7 @@ export interface CastMember {
   id: string;
   name: string;
   type: number;
-  deletedAt: null;
+  deletedAt: string;
   createdAt: string;
   updatedAt: string;
 }
