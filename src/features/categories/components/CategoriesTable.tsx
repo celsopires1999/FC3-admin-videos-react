@@ -118,8 +118,8 @@ export function CategoriesTable({
       id: category.id,
       name: category.name,
       description: category.description,
-      is_active: category.is_active,
-      created_at: new Date(category.created_at).toLocaleDateString("pt-BR"),
+      is_active: category.isActive,
+      created_at: new Date(category.createdAt).toLocaleDateString("pt-BR"),
     }));
   }
 

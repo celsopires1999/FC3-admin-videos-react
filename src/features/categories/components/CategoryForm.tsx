@@ -9,7 +9,7 @@ import {
   TextField,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { Category } from "./../../categories/categorySlice";
+import { Category } from "../../../types/Category";
 
 type Props = {
   category: Category;
@@ -67,7 +67,7 @@ export const CategoryForm = ({
                     color="secondary"
                     disabled={isDisabled}
                     onChange={handleToggle}
-                    checked={category.is_active}
+                    checked={category.isActive}
                     inputProps={{ "aria-label": "controlled" }}
                   />
                 }

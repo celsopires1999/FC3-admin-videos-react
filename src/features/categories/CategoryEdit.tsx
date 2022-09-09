@@ -2,8 +2,8 @@ import { Box, Paper, Typography } from "@mui/material";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Category } from "../../types/Category";
 import {
-  Category,
   useGetCategoryQuery,
   useUpdateCategoryMutation,
 } from "./categorySlice";
@@ -17,10 +17,10 @@ export const CategoryEdit = () => {
     id: "",
     name: "",
     description: "",
-    is_active: false,
-    deleted_at: "",
-    created_at: "",
-    updated_at: "",
+    isActive: false,
+    deletedAt: "",
+    createdAt: "",
+    updatedAt: "",
   });
   const { enqueueSnackbar } = useSnackbar();
 
