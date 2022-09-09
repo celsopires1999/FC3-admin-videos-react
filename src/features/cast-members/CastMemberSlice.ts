@@ -17,13 +17,34 @@ export const initialState: CastMember = {
   updatedAt: "",
 };
 
+function getCastMembers(params: CastMemberParams) {
+  const { page = 1, perPage = 10, type, search } = params;
+  return `${endpointUrl}?${parseQueryParams({
+    page,
+    perPage,
+    search,
+    type,
+  })}`;
+}
+
 function parseQueryParams(params: CastMemberParams) {
-  return null;
+  const query = new URLSearchParams();
+
+  params.page && query.append("page", params.page.toString());
+  params.perPage && query.append("per_page", params.perPage.toString());
+  params.search && query.append("search", params.search);
+  params.type && query.append("type", params.type.toString());
+
+  return query.toString();
 }
 
 export const castMembersApiSlice = apiSlice.injectEndpoints({
-  // @ts-ignore
-  endpoints: () => null,
+  endpoints: ({ query }) => ({
+    getCastMembers: query<Results, CastMemberParams>({
+      query: getCastMembers,
+      providesTags: ["CastMembers"],
+    }),
+  }),
 });
 
-export {};
+export const { useGetCastMembersQuery } = castMembersApiSlice;
