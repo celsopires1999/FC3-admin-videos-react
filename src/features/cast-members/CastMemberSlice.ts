@@ -38,6 +38,25 @@ function parseQueryParams(params: CastMemberParams) {
   return query.toString();
 }
 
+function getCastMember({ id }: { id: string }) {
+  return {
+    url: `${endpointUrl}/${id}`,
+    method: "GET",
+  };
+}
+
+function createCastMember(castMember: CastMember) {
+  return { url: endpointUrl, method: "POST", body: castMember };
+}
+
+function updateCastMember(castMember: CastMember) {
+  return {
+    url: `${endpointUrl}/${castMember.id}`,
+    method: "PUT",
+    body: castMember,
+  };
+}
+
 function deleteCastMember({ id }: { id: string }) {
   return {
     url: `${endpointUrl}/${id}`,
@@ -51,6 +70,18 @@ export const castMembersApiSlice = apiSlice.injectEndpoints({
       query: getCastMembers,
       providesTags: ["CastMembers"],
     }),
+    getCastMember: query<Result, { id: string }>({
+      query: getCastMember,
+      providesTags: ["Categories"],
+    }),
+    createCastMember: mutation<Result, CastMember>({
+      query: createCastMember,
+      invalidatesTags: ["CastMembers"],
+    }),
+    updateCastMember: mutation<Result, CastMember>({
+      query: updateCastMember,
+      invalidatesTags: ["CastMembers"],
+    }),
     deleteCastMember: mutation<{}, { id: string }>({
       query: deleteCastMember,
       invalidatesTags: ["CastMembers"],
@@ -58,5 +89,10 @@ export const castMembersApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetCastMembersQuery, useDeleteCastMemberMutation } =
-  castMembersApiSlice;
+export const {
+  useGetCastMemberQuery,
+  useGetCastMembersQuery,
+  useCreateCastMemberMutation,
+  useUpdateCastMemberMutation,
+  useDeleteCastMemberMutation,
+} = castMembersApiSlice;
