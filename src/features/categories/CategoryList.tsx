@@ -15,7 +15,7 @@ export const CategoryList = () => {
   const [search, setSearch] = useState<string>("");
   const [rowsPerPage] = useState<number[]>([10, 25, 50, 100]);
 
-  const options = { page, perPage, search };
+  const options = { per_page: perPage, page, search };
 
   const { data, isFetching, error } = useGetCategoriesQuery(options);
   const [deleteCategory, deleteCategoryStatus] = useDeleteCategoryMutation();

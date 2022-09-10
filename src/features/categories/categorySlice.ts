@@ -33,8 +33,8 @@ export const categoriesApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-function getCategories({ page = 1, perPage = 10, search = "" }) {
-  const params = { page, perPage, search, isActive: true };
+function getCategories({ page = 1, per_page = 10, search = "" }) {
+  const params = { page, per_page, search, isActive: true };
 
   return `${endpointUrl}?${parseQueryParams(params)}`;
 }
@@ -68,21 +68,10 @@ function deleteCategoryMutation(category: Category) {
 function parseQueryParams(params: CategoryParams): string {
   const query = new URLSearchParams();
 
-  if (params.page) {
-    query.append("page", params.page.toString());
-  }
-
-  if (params.perPage) {
-    query.append("per_page", params.perPage.toString());
-  }
-
-  if (params.search) {
-    query.append("search", params.search);
-  }
-
-  if (params.isActive) {
-    query.append("is_active", params.isActive.toString());
-  }
+  params.page && query.append("page", params.page.toString());
+  params.per_page && query.append("per_page", params.per_page.toString());
+  params.search && query.append("search", params.search.toString());
+  params.is_active && query.append("is_active", params.is_active.toString());
 
   return query.toString();
 }

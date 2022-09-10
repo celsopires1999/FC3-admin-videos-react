@@ -30,14 +30,14 @@ export interface Meta {
   from: number;
   path: string;
   total: number;
-  perPage: number;
-  lastPage: number;
-  currentPage: number;
+  per_page: number;
+  last_page: number;
+  current_page: number;
 }
 
 export interface CategoryParams {
   page?: number;
-  perPage?: number;
+  per_page?: number;
   search?: string;
-  isActive?: boolean;
+  is_active?: boolean;
 }
