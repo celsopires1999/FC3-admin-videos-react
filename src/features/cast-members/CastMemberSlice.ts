@@ -12,9 +12,9 @@ export const initialState: CastMember = {
   id: "",
   name: "",
   type: 0,
-  deletedAt: "",
-  createdAt: "",
-  updatedAt: "",
+  deleted_at: "",
+  created_at: "",
+  update_at: "",
 };
 
 function getCastMembers(params: CastMemberParams) {

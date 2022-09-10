@@ -2,9 +2,9 @@ export interface CastMember {
   id: string;
   name: string;
   type: number;
-  deletedAt: string;
-  createdAt: string;
-  updatedAt: string;
+  deleted_at: string;
+  created_at: string;
+  update_at: string;
 }
 
 export interface Results {
@@ -29,9 +29,9 @@ export interface Meta {
   from: number;
   path: string;
   total: number;
-  perPage: number;
-  lastPage: number;
-  currentPage: number;
+  per_page: number;
+  last_page: number;
+  current_page: number;
 }
 
 export interface CastMemberParams {
