@@ -51,7 +51,7 @@ export const CategoryCreate = () => {
           </Box>
         </Box>
         <CategoryForm
-          isLoading={false}
+          isLoading={status.isLoading}
           isDisabled={status.isLoading}
           category={categoryState}
           handleSubmit={handleSubmit}

@@ -11,10 +11,10 @@ const endpointUrl = "/cast_members";
 export const initialState: CastMember = {
   id: "",
   name: "",
-  type: 0,
+  type: 1,
   deleted_at: "",
   created_at: "",
-  update_at: "",
+  updated_at: "",
 };
 
 function getCastMembers(params: CastMemberParams) {

@@ -4,7 +4,7 @@ export interface CastMember {
   type: number;
   deleted_at: string;
   created_at: string;
-  update_at: string;
+  updated_at: string;
 }
 
 export interface Results {
