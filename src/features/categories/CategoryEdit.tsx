@@ -10,7 +10,7 @@ import {
 import { CategoryForm } from "./components/CategoryForm";
 
 export const CategoryEdit = () => {
-  const id = useParams().id || "";
+  const id = useParams().id ?? "";
   const { data: category, isFetching } = useGetCategoryQuery({ id });
   const [updateCategory, status] = useUpdateCategoryMutation();
   const [categoryState, setCategoryState] = useState<Category>({
@@ -63,12 +63,12 @@ export const CategoryEdit = () => {
           </Box>
         </Box>
         <CategoryForm
-          isLoading={false}
-          isDisabled={status.isLoading}
           category={categoryState}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           handleToggle={handleToggle}
+          isDisabled={status.isLoading}
+          isLoading={isFetching || status.isLoading}
         />
       </Paper>
     </Box>

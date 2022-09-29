@@ -72,7 +72,7 @@ export const castMembersApiSlice = apiSlice.injectEndpoints({
     }),
     getCastMember: query<Result, { id: string }>({
       query: getCastMember,
-      providesTags: ["Categories"],
+      providesTags: ["CastMembers"],
     }),
     createCastMember: mutation<Result, CastMember>({
       query: createCastMember,
