@@ -1,7 +1,8 @@
 import { Box, Paper, Typography } from "@mui/material";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
-import { Category, useCreateCategoryMutation } from "./categorySlice";
+import { Category } from "../../types/Category";
+import { useCreateCategoryMutation } from "./categorySlice";
 import { CategoryForm } from "./components/CategoryForm";
 
 export const CategoryCreate = () => {
@@ -50,7 +51,7 @@ export const CategoryCreate = () => {
           </Box>
         </Box>
         <CategoryForm
-          isLoading={false}
+          isLoading={status.isLoading}
           isDisabled={status.isLoading}
           category={categoryState}
           handleSubmit={handleSubmit}

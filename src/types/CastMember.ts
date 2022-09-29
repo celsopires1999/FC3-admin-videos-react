@@ -1,27 +1,26 @@
-export interface Category {
+export interface CastMember {
   id: string;
   name: string;
-  description: string | null;
-  is_active: boolean;
-  deleted_at: string | null;
+  type: number;
+  deleted_at: string;
   created_at: string;
   updated_at: string;
 }
 
-export interface Result {
-  data: Category;
+export interface Results {
+  data: CastMember[];
+  links: Links;
+  meta: Meta;
 }
 
-export interface Results {
-  meta: Meta;
-  links: Links;
-  data: Category[];
+export interface Result {
+  data: CastMember;
 }
 
 export interface Links {
   prev: null;
-  next: string;
   last: string;
+  next: string;
   first: string;
 }
 
@@ -35,9 +34,9 @@ export interface Meta {
   current_page: number;
 }
 
-export interface CategoryParams {
+export interface CastMemberParams {
   page?: number;
-  per_page?: number;
+  perPage?: number;
   search?: string;
-  is_active?: boolean;
+  type?: number;
 }

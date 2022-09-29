@@ -26,3 +26,18 @@ Content-Type: application/json
 ###
 DELETE http://host.docker.internal:8000/api/categories/66fc7465-f62d-425a-8f62-e79fc5570245
 Content-Type: application/json
+
+###
+###
+###
+POST http://host.docker.internal:8000/api/cast_members
+Content-Type: application/json
+
+{
+    "name": "Docker",
+    "type": "1"
+}
+
+###
+GET http://host.docker.internal:8000/api/cast_members
+Content-Type: application/json

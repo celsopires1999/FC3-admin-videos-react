@@ -2,15 +2,15 @@ import { Box, Paper, Typography } from "@mui/material";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Category } from "../../types/Category";
 import {
-  Category,
   useGetCategoryQuery,
   useUpdateCategoryMutation,
 } from "./categorySlice";
 import { CategoryForm } from "./components/CategoryForm";
 
 export const CategoryEdit = () => {
-  const id = useParams().id || "";
+  const id = useParams().id ?? "";
   const { data: category, isFetching } = useGetCategoryQuery({ id });
   const [updateCategory, status] = useUpdateCategoryMutation();
   const [categoryState, setCategoryState] = useState<Category>({
@@ -63,12 +63,12 @@ export const CategoryEdit = () => {
           </Box>
         </Box>
         <CategoryForm
-          isLoading={false}
-          isDisabled={status.isLoading}
           category={categoryState}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           handleToggle={handleToggle}
+          isDisabled={status.isLoading}
+          isLoading={isFetching || status.isLoading}
         />
       </Paper>
     </Box>

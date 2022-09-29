@@ -4,28 +4,28 @@ import {
   FormControl,
   FormControlLabel,
   FormGroup,
+  FormLabel,
   Grid,
-  Switch,
+  Radio,
+  RadioGroup,
   TextField,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { Category } from "../../../types/Category";
+import { CastMember } from "../../../types/CastMember";
 
 type Props = {
-  category: Category;
+  castMember: CastMember;
   isDisabled?: boolean;
   isLoading?: boolean;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
-export const CategoryForm = ({
-  category,
+export const CastMemberForm = ({
+  castMember,
   isDisabled = false,
   isLoading = false,
   handleSubmit,
   handleChange,
-  handleToggle,
 }: Props) => {
   return (
     <Box p={2}>
@@ -38,48 +38,43 @@ export const CategoryForm = ({
                 required
                 name="name"
                 label="Name"
-                value={category.name}
-                disabled={isDisabled}
+                value={castMember.name}
+                disabled={isDisabled || isLoading}
                 onChange={handleChange}
               />
             </FormControl>
           </Grid>
-          {/* Description */}
-          <Grid item xs={12}>
-            <FormControl fullWidth>
-              <TextField
-                required
-                name="description"
-                label="Description"
-                value={category.description}
-                disabled={isDisabled}
-                onChange={handleChange}
-              />
-            </FormControl>
-          </Grid>
-          {/* Is_Active */}
+          {/* Type  */}
           <Grid item xs={12}>
             <FormGroup>
-              <FormControlLabel
-                control={
-                  <Switch
-                    name="is_active"
-                    color="secondary"
-                    disabled={isDisabled}
-                    onChange={handleToggle}
-                    checked={category.is_active}
-                    inputProps={{ "aria-label": "controlled" }}
-                  />
-                }
-                label="Active"
-              />
+              <FormLabel>Type</FormLabel>
+              <RadioGroup
+                aria-labelledby="type of cast member"
+                defaultValue={1}
+                name="type"
+                value={castMember.type}
+                onChange={handleChange}
+              >
+                <FormControlLabel
+                  value={1}
+                  control={<Radio />}
+                  label="Director"
+                  disabled={isDisabled || isLoading}
+                />
+                <FormControlLabel
+                  value={2}
+                  control={<Radio />}
+                  label="Actor"
+                  disabled={isDisabled || isLoading}
+                />
+              </RadioGroup>
             </FormGroup>
           </Grid>
           {/* Buttons */}
           <Grid item xs={12}>
             <Box display="flex" gap={2}>
               {/* Back */}
-              <Button variant="contained" component={Link} to="/categories">
+              <Button variant="contained" component={Link} to="/cast-members">
                 Back
               </Button>
               {/* Save */}

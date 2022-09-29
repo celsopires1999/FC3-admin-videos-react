@@ -5,6 +5,9 @@ import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/header";
 import { Layout } from "./components/Layout";
 import { appTheme } from "./config/theme";
+import { CastMemberCreate } from "./features/cast-members/CastMemberCreate";
+import { CastMemberEdit } from "./features/cast-members/CastMemberEdit";
+import { CastMemberList } from "./features/cast-members/CastMemberList";
 import { CategoryCreate } from "./features/categories/CategoryCreate";
 import { CategoryEdit } from "./features/categories/CategoryEdit";
 import { CategoryList } from "./features/categories/CategoryList";
@@ -21,6 +24,7 @@ function App() {
           component="main"
           sx={{
             height: "100vh",
+            minHeight: 650,
             backgroundColor: (theme) => theme.palette.grey[900],
           }}
         >
@@ -28,9 +32,21 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<CategoryList />} />
+              {/* Category */}
               <Route path="/categories" element={<CategoryList />} />
               <Route path="/categories/create" element={<CategoryCreate />} />
               <Route path="/categories/edit/:id" element={<CategoryEdit />} />
+
+              {/* Cast Members */}
+              <Route path="/cast-members" element={<CastMemberList />} />
+              <Route
+                path="/cast-members/create"
+                element={<CastMemberCreate />}
+              />
+              <Route
+                path="/cast-members/edit/:id"
+                element={<CastMemberEdit />}
+              />
 
               <Route
                 path="*"
