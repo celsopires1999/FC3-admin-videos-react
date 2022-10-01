@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import { Box, ThemeProvider } from "@mui/system";
 import { SnackbarProvider } from "notistack";
 import { Route, Routes } from "react-router-dom";
-import { Header } from "./components/header";
+import { Header } from "./components/Header";
 import { Layout } from "./components/Layout";
 import { appTheme } from "./config/theme";
 import { CastMemberCreate } from "./features/cast-members/CastMemberCreate";
