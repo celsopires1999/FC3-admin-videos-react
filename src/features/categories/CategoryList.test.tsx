@@ -74,4 +74,22 @@ describe("CategoryList", () => {
       expect(name).toBeInTheDocument();
     });
   });
+
+  it("should handle filter change", async () => {
+    renderWithProviders(<CategoryList />);
+
+    await waitFor(() => {
+      const name = screen.getByText("Docker");
+      expect(name).toBeInTheDocument();
+    });
+
+    const input = screen.getByPlaceholderText("Search…");
+
+    fireEvent.change(input, { target: { value: "Chocolate" } });
+
+    await waitFor(() => {
+      const loading = screen.getByRole("progressbar");
+      expect(loading).toBeInTheDocument();
+    });
+  });
 });
