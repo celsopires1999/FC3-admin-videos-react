@@ -2,12 +2,20 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { baseUrl } from "../api/apiSlice";
 
-import { renderWithProviders, screen, waitFor } from "../../utils/test-utils";
+import {
+  fireEvent,
+  renderWithProviders,
+  screen,
+  waitFor,
+} from "../../utils/test-utils";
 import { CategoryList } from "./CategoryList";
-import { categoryResponse } from "./mocks";
+import { categoryResponse, categoryResponsePage2 } from "./mocks";
 
 export const handlers = [
-  rest.get(`${baseUrl}/categories`, (_, res, ctx) => {
+  rest.get(`${baseUrl}/categories`, (req, res, ctx) => {
+    if (req.url.searchParams.get("page") === "2") {
+      return res(ctx.json(categoryResponsePage2), ctx.delay(150));
+    }
     return res(ctx.json(categoryResponse), ctx.delay(150));
   }),
 ];
@@ -48,6 +56,22 @@ describe("CategoryList", () => {
     await waitFor(() => {
       const error = screen.getByText("Error fetching categories");
       expect(error).toBeInTheDocument();
+    });
+  });
+
+  it("should handle on page change", async () => {
+    renderWithProviders(<CategoryList />);
+
+    await waitFor(() => {
+      const name = screen.getByText("Docker");
+      expect(name).toBeInTheDocument();
+    });
+
+    const nextButton = screen.getByTestId("KeyboardArrowRightIcon");
+    fireEvent.click(nextButton);
+    await waitFor(() => {
+      const name = screen.getByText("LightSlateGray");
+      expect(name).toBeInTheDocument();
     });
   });
 });
