@@ -3,7 +3,14 @@ GET http://host.docker.internal:8000/api/categories
 Content-Type: application/json
 
 ###
-GET http://host.docker.internal:8000/api/categories/01ffe654-6cdd-4df8-a841-eebed0061994
+
+###
+GET http://host.docker.internal:8000/api/categories?page=2&per_page=15
+Content-Type: application/json
+
+###
+
+GET http://host.docker.internal:8000/api/categories/06fe24ca-71cc-4d55-9a64-82f953501b34
 Content-Type: application/json
 
 ###
