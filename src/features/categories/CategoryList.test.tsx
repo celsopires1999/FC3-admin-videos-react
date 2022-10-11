@@ -18,6 +18,13 @@ export const handlers = [
     }
     return res(ctx.json(categoryResponse), ctx.delay(150));
   }),
+
+  rest.delete(
+    `${baseUrl}/categories/06fe24ca-71cc-4d55-9a64-82f953501b34`,
+    (_, res, ctx) => {
+      return res(ctx.delay(150), ctx.status(204));
+    }
+  ),
 ];
 
 const server = setupServer(...handlers);
@@ -90,6 +97,22 @@ describe("CategoryList", () => {
     await waitFor(() => {
       const loading = screen.getByRole("progressbar");
       expect(loading).toBeInTheDocument();
+    });
+  });
+
+  it("should handle delete category success", async () => {
+    renderWithProviders(<CategoryList />);
+    await waitFor(() => {
+      const name = screen.getByText("Docker");
+      expect(name).toBeInTheDocument();
+    });
+    screen.debug();
+    const deleteButton = screen.getAllByTestId("delete-button")[0];
+    fireEvent.click(deleteButton);
+
+    await waitFor(() => {
+      const name = screen.getByText("Category deleted successfully");
+      expect(name).toBeInTheDocument();
     });
   });
 });
