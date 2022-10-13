@@ -6,8 +6,8 @@ import {
   ThunkAction,
 } from "@reduxjs/toolkit";
 import { apiSlice } from "../features/api/apiSlice";
-import { categoriesApiSlice } from "../features/categories/categorySlice";
 import { castMembersApiSlice } from "../features/cast-members/CastMemberSlice";
+import { categoriesApiSlice } from "../features/categories/categorySlice";
 
 const rootReducer = combineReducers({
   [apiSlice.reducerPath]: apiSlice.reducer,
