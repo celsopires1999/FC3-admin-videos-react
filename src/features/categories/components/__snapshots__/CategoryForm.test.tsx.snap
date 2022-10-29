@@ -38,6 +38,7 @@ exports[` 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="name"
                   disabled=""
                   id=":r0:"
                   name="name"
@@ -90,6 +91,7 @@ exports[` 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="description"
                   disabled=""
                   id=":r1:"
                   name="description"
@@ -128,6 +130,7 @@ exports[` 1`] = `
                 <span
                   aria-disabled="true"
                   class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-disabled Mui-disabled PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-disabled Mui-checked Mui-disabled css-priqlz-MuiButtonBase-root-MuiSwitch-switchBase"
+                  data-testid="is_active"
                   tabindex="-1"
                 >
                   <input
@@ -224,6 +227,7 @@ exports[` 2`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="name"
                   id=":r2:"
                   name="name"
                   required=""
@@ -275,6 +279,7 @@ exports[` 2`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="description"
                   id=":r3:"
                   name="description"
                   required=""
@@ -311,6 +316,7 @@ exports[` 2`] = `
               >
                 <span
                   class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-checked css-priqlz-MuiButtonBase-root-MuiSwitch-switchBase"
+                  data-testid="is_active"
                 >
                   <input
                     aria-label="controlled"
@@ -408,6 +414,7 @@ exports[` 3`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="name"
                   id=":r4:"
                   name="name"
                   required=""
@@ -459,6 +466,7 @@ exports[` 3`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="description"
                   id=":r5:"
                   name="description"
                   required=""
@@ -495,6 +503,7 @@ exports[` 3`] = `
               >
                 <span
                   class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-checked css-priqlz-MuiButtonBase-root-MuiSwitch-switchBase"
+                  data-testid="is_active"
                 >
                   <input
                     aria-label="controlled"
@@ -594,6 +603,7 @@ exports[`CategoryForm should render the category form with data 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="name"
                   id=":r6:"
                   name="name"
                   required=""
@@ -645,6 +655,7 @@ exports[`CategoryForm should render the category form with data 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="description"
                   id=":r7:"
                   name="description"
                   required=""
@@ -681,6 +692,7 @@ exports[`CategoryForm should render the category form with data 1`] = `
               >
                 <span
                   class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-checked css-priqlz-MuiButtonBase-root-MuiSwitch-switchBase"
+                  data-testid="is_active"
                 >
                   <input
                     aria-label="controlled"

@@ -41,6 +41,7 @@ export const CategoryForm = ({
                 value={category.name}
                 disabled={isDisabled}
                 onChange={handleChange}
+                inputProps={{ "data-testid": "name" }}
               />
             </FormControl>
           </Grid>
@@ -54,6 +55,7 @@ export const CategoryForm = ({
                 value={category.description}
                 disabled={isDisabled}
                 onChange={handleChange}
+                inputProps={{ "data-testid": "description" }}
               />
             </FormControl>
           </Grid>
@@ -69,6 +71,7 @@ export const CategoryForm = ({
                     onChange={handleToggle}
                     checked={category.is_active}
                     inputProps={{ "aria-label": "controlled" }}
+                    data-testid="is_active"
                   />
                 }
                 label="Active"

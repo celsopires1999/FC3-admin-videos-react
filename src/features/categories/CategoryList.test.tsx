@@ -106,12 +106,36 @@ describe("CategoryList", () => {
       const name = screen.getByText("Docker");
       expect(name).toBeInTheDocument();
     });
-    screen.debug();
     const deleteButton = screen.getAllByTestId("delete-button")[0];
     fireEvent.click(deleteButton);
 
     await waitFor(() => {
       const name = screen.getByText("Category deleted successfully");
+      expect(name).toBeInTheDocument();
+    });
+  });
+
+  it("should handle delete category error", async () => {
+    server.use(
+      rest.delete(
+        `${baseUrl}/categories/06fe24ca-71cc-4d55-9a64-82f953501b34`,
+        (_, res, ctx) => {
+          return res(ctx.status(500));
+        }
+      )
+    );
+
+    renderWithProviders(<CategoryList />);
+    await waitFor(() => {
+      const name = screen.getByText("Docker");
+      expect(name).toBeInTheDocument();
+    });
+
+    const deleteButton = screen.getAllByTestId("delete-button")[0];
+    fireEvent.click(deleteButton);
+
+    await waitFor(() => {
+      const name = screen.getByText("Category not deleted");
       expect(name).toBeInTheDocument();
     });
   });
