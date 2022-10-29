@@ -100,7 +100,7 @@ describe("CategoryList", () => {
     });
   });
 
-  it.skip("should handle delete category success", async () => {
+  it("should handle delete category success", async () => {
     renderWithProviders(<CategoryList />);
     await waitFor(() => {
       const name = screen.getByText("Docker");
@@ -115,7 +115,7 @@ describe("CategoryList", () => {
     });
   });
 
-  it.skip("should handle delete category error", async () => {
+  it("should handle delete category error", async () => {
     server.use(
       rest.delete(
         `${baseUrl}/categories/06fe24ca-71cc-4d55-9a64-82f953501b34`,
