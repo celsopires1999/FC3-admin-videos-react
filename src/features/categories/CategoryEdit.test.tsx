@@ -69,4 +69,35 @@ describe("CategoryEdit", () => {
       expect(text).toBeInTheDocument();
     });
   });
+
+  it("should handle submit error", async () => {
+    server.use(
+      rest.put(
+        `${baseUrl}/categories/260926c6-4e76-40e0-9170-b9907f0d37b0`,
+        (_, res, ctx) => {
+          return res(ctx.status(500));
+        }
+      )
+    );
+    renderWithProviders(<CategoryEdit />);
+    const name = screen.getByTestId("name");
+    const description = screen.getByTestId("description");
+    const isActive = screen.getByTestId("is_active");
+
+    await waitFor(() => {
+      expect(name).toHaveValue("Category 1");
+    });
+
+    fireEvent.change(name, { target: { value: "Category 2" } });
+    fireEvent.change(description, { target: { value: "Description 2" } });
+    fireEvent.click(isActive);
+
+    const submit = screen.getByText("Save");
+    fireEvent.click(submit);
+
+    await waitFor(() => {
+      const text = screen.getByText("Error updating category");
+      expect(text).toBeInTheDocument();
+    });
+  });
 });
