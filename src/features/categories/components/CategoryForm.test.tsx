@@ -26,7 +26,7 @@ describe("CategoryForm", () => {
     });
     expect(asFragment()).toMatchSnapshot();
   });
-  describe("should render the category form on disabled", () => {
+  it("should render the category form on disabled", () => {
     const { asFragment } = render(
       <CategoryForm {...Props} isDisabled={true} />,
       {
@@ -36,7 +36,7 @@ describe("CategoryForm", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  describe("should render the category form on loading", () => {
+  it("should render the category form on loading", () => {
     const { asFragment } = render(
       <CategoryForm {...Props} isLoading={true} />,
       {
@@ -45,7 +45,7 @@ describe("CategoryForm", () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  describe("should render the category form without isDisabled and isLoading", () => {
+  it("should render the category form without isDisabled and isLoading", () => {
     const { asFragment } = render(
       <CategoryForm {...Props} isDisabled={undefined} isLoading={undefined} />,
       {
