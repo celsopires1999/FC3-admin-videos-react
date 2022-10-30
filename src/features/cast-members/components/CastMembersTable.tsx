@@ -98,6 +98,7 @@ export function CastMembersTable({
         color="secondary"
         onClick={() => handleDelete(rowData.value)}
         aria-label="delete"
+        data-testid="delete-button"
       >
         <DeleteIcon />
       </IconButton>
