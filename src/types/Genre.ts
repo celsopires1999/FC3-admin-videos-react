@@ -40,5 +40,11 @@ export interface GenreParams {
   page?: number;
   perPage?: number;
   search?: string;
-  type?: number;
+  is_active?: boolean;
+}
+
+export interface GenrePayload {
+  id: string;
+  name: string;
+  categories?: Category[];
 }

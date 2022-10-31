@@ -1,4 +1,10 @@
-import { Genre, GenreParams, Result, Results } from "../../types/Genre";
+import {
+  Genre,
+  GenreParams,
+  GenrePayload,
+  Result,
+  Results,
+} from "../../types/Genre";
 import { apiSlice } from "../api/apiSlice";
 
 const endpointUrl = "/genres";
@@ -12,13 +18,20 @@ export const initialState: Genre = {
   updated_at: "",
 };
 
+//TODO - verificar a necessidade de incluir no initialState
+/*
+is_active
+description
+pivot: { genre_id: "", category_id: ""}
+*/
+
 function getGenres(params: GenreParams) {
-  const { page = 1, perPage = 10, type, search } = params;
+  const { page = 1, perPage = 10, is_active = true, search } = params;
   return `${endpointUrl}?${parseQueryParams({
     page,
     perPage,
     search,
-    type,
+    is_active,
   })}`;
 }
 
@@ -28,7 +41,7 @@ function parseQueryParams(params: GenreParams) {
   params.page && query.append("page", params.page.toString());
   params.perPage && query.append("per_page", params.perPage.toString());
   params.search && query.append("search", params.search);
-  params.type && query.append("type", params.type.toString());
+  params.is_active && query.append("is_active", params.is_active.toString());
 
   return query.toString();
 }
@@ -40,15 +53,15 @@ function getGenre({ id }: { id: string }) {
   };
 }
 
-function createGenre(genre: Genre) {
-  return { url: endpointUrl, method: "POST", body: genre };
+function createGenre(genrePayload: GenrePayload) {
+  return { url: endpointUrl, method: "POST", body: genrePayload };
 }
 
-function updateGenre(genre: Genre) {
+function updateGenre(genrePayload: GenrePayload) {
   return {
-    url: `${endpointUrl}/${genre.id}`,
+    url: `${endpointUrl}/${genrePayload.id}`,
     method: "PUT",
-    body: genre,
+    body: genrePayload,
   };
 }
 
