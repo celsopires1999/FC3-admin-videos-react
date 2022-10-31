@@ -1,8 +1,9 @@
+import { Category } from "./Category";
+
 export interface Genre {
   id: string;
   name: string;
-  description: string | null;
-  is_active: boolean;
+  categories: Category[];
   deleted_at: string | null;
   created_at: string;
   updated_at: string;
