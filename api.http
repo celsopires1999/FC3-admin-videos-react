@@ -52,3 +52,11 @@ Content-Type: application/json
 ###
 GET http://host.docker.internal:8000/api/cast_members/01a20423-248f-48a4-82d6-6b17a11961b8
 Content-Type: application/json
+
+###
+GET http://host.docker.internal:8000/api/genres
+Content-Type: application/json
+
+###
+GET http://host.docker.internal:8000/api/genres/01201e93-17ec-449e-b947-85a7b956fec5
+Content-Type: application/json
