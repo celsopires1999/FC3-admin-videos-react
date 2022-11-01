@@ -1,10 +1,10 @@
 import {
+  Autocomplete,
   Box,
   Button,
   FormControl,
   Grid,
   TextField,
-  Autocomplete,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Category } from "../../../types/Category";
@@ -54,13 +54,22 @@ export const GenreForm = ({
               options={categories ?? []}
               getOptionLabel={(option) => option.name}
               filterSelectedOptions
+              renderOption={(props, option) => (
+                <li {...props} key={option.id}>
+                  {option.name}
+                </li>
+              )}
               renderInput={(params) => (
                 <TextField
                   {...params}
+                  required={true}
                   label="Categories"
                   data-testid="categories-input"
                 />
               )}
+              onChange={(_, value) => {
+                handleChange({ target: { name: "categories", value } } as any);
+              }}
             />
           </Grid>
           {/* Buttons */}

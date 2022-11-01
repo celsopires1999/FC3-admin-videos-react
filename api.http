@@ -75,7 +75,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://host.docker.internal:8000/api/genres/c60f65b5-9cea-4b03-b834-3c1330e0092c
+DELETE http://host.docker.internal:8000/api/genres/8048874c-7d8a-4f79-af29-07079aaee000
 Content-Type: application/json
 
 ###
