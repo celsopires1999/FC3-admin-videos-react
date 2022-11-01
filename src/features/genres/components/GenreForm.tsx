@@ -12,7 +12,7 @@ import { Genre } from "../../../types/Genre";
 
 type Props = {
   genre: Genre;
-  categories: Category[];
+  categories?: Category[];
   isDisabled?: boolean;
   isLoading?: boolean;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -51,7 +51,7 @@ export const GenreForm = ({
               disabled={isDisabled || isLoading || !categories}
               loading={isLoading}
               value={genre.categories}
-              options={categories}
+              options={categories ?? []}
               getOptionLabel={(option) => option.name}
               filterSelectedOptions
               renderInput={(params) => (

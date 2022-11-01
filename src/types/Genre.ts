@@ -46,5 +46,5 @@ export interface GenreParams {
 export interface GenrePayload {
   id: string;
   name: string;
-  categories?: Category[];
+  categories_id?: string[];
 }

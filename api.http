@@ -62,3 +62,20 @@ Content-Type: application/json
 ###
 GET http://host.docker.internal:8000/api/genres/01201e93-17ec-449e-b947-85a7b956fec5
 Content-Type: application/json
+
+###
+
+POST http://host.docker.internal:8000/api/genres
+Content-Type: application/json
+
+{
+    "name": "Terror",
+    "categories_id": ["06fe24ca-71cc-4d55-9a64-82f953501b34"]
+}
+
+###
+
+DELETE http://host.docker.internal:8000/api/genres/c60f65b5-9cea-4b03-b834-3c1330e0092c
+Content-Type: application/json
+
+###
