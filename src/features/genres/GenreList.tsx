@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { GridFilterModel } from "@mui/x-data-grid";
 import { useSnackbar } from "notistack";
@@ -60,18 +60,28 @@ export const GenreList = () => {
 
   return (
     <Box maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      {/* New Genre Button*/}
-      <Box display="flex" justifyContent="flex-end">
-        <Button
-          variant="contained"
-          color="secondary"
-          component={Link}
-          to="/genres/create"
-          sx={{ mb: "1rem" }}
-        >
-          New Genre
-        </Button>
-      </Box>
+      {/* Header */}
+      <Grid container>
+        <Grid item xs={6}>
+          <Box display="flex" justifyContent="flex-start">
+            <Typography variant="h4">Genre List</Typography>
+          </Box>
+        </Grid>
+        {/* New Genre Button*/}
+        <Grid item xs={6}>
+          <Box display="flex" justifyContent="flex-end">
+            <Button
+              variant="contained"
+              color="secondary"
+              component={Link}
+              to="/genres/create"
+              sx={{ mb: "1rem" }}
+            >
+              New Genre
+            </Button>
+          </Box>
+        </Grid>
+      </Grid>
       <GenresTable
         data={data}
         isFetching={isFetching}

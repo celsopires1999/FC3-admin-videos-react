@@ -128,6 +128,7 @@ export function GenresTable({
         paginationMode={"server"}
         checkboxSelection={false}
         disableColumnFilter={true}
+        getRowHeight={() => "auto"}
         disableColumnSelector={true}
         disableDensitySelector={true}
         disableSelectionOnClick={true}

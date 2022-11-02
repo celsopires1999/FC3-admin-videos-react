@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { GridFilterModel } from "@mui/x-data-grid";
 import { useSnackbar } from "notistack";
@@ -64,18 +64,28 @@ export const CastMemberList = () => {
 
   return (
     <Box maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      {/* New Category Button*/}
-      <Box display="flex" justifyContent="flex-end">
-        <Button
-          variant="contained"
-          color="secondary"
-          component={Link}
-          to="/cast-members/create"
-          sx={{ mb: "1rem" }}
-        >
-          New Cast Member
-        </Button>
-      </Box>
+      {/* Header */}
+      <Grid container>
+        <Grid item xs={6}>
+          <Box display="flex" justifyContent="flex-start">
+            <Typography variant="h4">Cast Members List</Typography>
+          </Box>
+        </Grid>
+        {/* New Category Button*/}
+        <Grid item xs={6}>
+          <Box display="flex" justifyContent="flex-end">
+            <Button
+              variant="contained"
+              color="secondary"
+              component={Link}
+              to="/cast-members/create"
+              sx={{ mb: "1rem" }}
+            >
+              New Cast Member
+            </Button>
+          </Box>
+        </Grid>
+      </Grid>
       <CastMembersTable
         data={data}
         isFetching={isFetching}
