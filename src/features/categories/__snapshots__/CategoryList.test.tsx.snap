@@ -6,18 +6,39 @@ exports[`CategoryList should render category list page 1`] = `
     class="MuiBox-root css-1ozyran"
   >
     <div
-      class="MuiBox-root css-1bvc4cc"
+      class="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
     >
-      <a
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1xny4qt-MuiButtonBase-root-MuiButton-root"
-        href="/categories/create"
-        tabindex="0"
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
       >
-        New Category
-        <span
-          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-        />
-      </a>
+        <div
+          class="MuiBox-root css-1w1vbxm"
+        >
+          <h4
+            class="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+          >
+            Categories List
+          </h4>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
+      >
+        <div
+          class="MuiBox-root css-1bvc4cc"
+        >
+          <a
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1xny4qt-MuiButtonBase-root-MuiButton-root"
+            href="/categories/create"
+            tabindex="0"
+          >
+            New Category
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </a>
+        </div>
+      </div>
     </div>
     <div
       class="MuiBox-root css-19v3fxd"
