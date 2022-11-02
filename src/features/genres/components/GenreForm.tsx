@@ -54,6 +54,7 @@ export const GenreForm = ({
               options={categories ?? []}
               getOptionLabel={(option) => option.name}
               filterSelectedOptions
+              isOptionEqualToValue={(option, value) => option.id === value.id}
               renderOption={(props, option) => (
                 <li {...props} key={option.id}>
                   {option.name}
@@ -62,7 +63,6 @@ export const GenreForm = ({
               renderInput={(params) => (
                 <TextField
                   {...params}
-                  required={true}
                   label="Categories"
                   data-testid="categories-input"
                 />
