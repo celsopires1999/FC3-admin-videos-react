@@ -76,7 +76,7 @@ export const GenreForm = ({
           <Grid item xs={12}>
             <Box display="flex" gap={2}>
               {/* Back */}
-              <Button variant="contained" component={Link} to="/cast-members">
+              <Button variant="contained" component={Link} to="/genres">
                 Back
               </Button>
               {/* Save */}

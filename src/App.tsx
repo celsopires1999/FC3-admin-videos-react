@@ -13,6 +13,7 @@ import { CategoryEdit } from "./features/categories/CategoryEdit";
 import { CategoryList } from "./features/categories/CategoryList";
 import { GenreCreate } from "./features/genres/GenreCreate";
 import { GenreEdit } from "./features/genres/GenreEdit";
+import { GenreList } from "./features/genres/GenreList";
 
 function App() {
   return (
@@ -51,10 +52,7 @@ function App() {
               />
 
               {/* Genres */}
-              <Route
-                path="/genres"
-                element={<Typography>Genres List</Typography>}
-              />
+              <Route path="/genres" element={<GenreList />} />
               <Route path="/genres/create" element={<GenreCreate />} />
               <Route path="/genres/edit/:id" element={<GenreEdit />} />
 
