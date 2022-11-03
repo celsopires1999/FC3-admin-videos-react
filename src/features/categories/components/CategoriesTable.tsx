@@ -52,30 +52,30 @@ export function CategoriesTable({
     {
       field: "name",
       headerName: "Name",
-      flex: 1,
+      flex: 20,
       renderCell: renderNameCell,
     },
     {
       field: "description",
       headerName: "Description",
-      flex: 1,
+      flex: 40,
     },
     {
       field: "is_active",
       headerName: "Active?",
-      flex: 1,
+      flex: 10,
       type: "boolean",
       renderCell: renderIsActiveCell,
     },
     {
       field: "created_at",
       headerName: "Created At",
-      flex: 1,
+      flex: 20,
     },
     {
       field: "id",
       headerName: "Actions",
-      flex: 1,
+      flex: 10,
       renderCell: renderActionsCell,
     },
   ];
@@ -139,6 +139,7 @@ export function CategoriesTable({
         paginationMode={"server"}
         checkboxSelection={false}
         disableColumnFilter={true}
+        getRowHeight={() => "auto"}
         disableColumnSelector={true}
         disableDensitySelector={true}
         disableSelectionOnClick={true}

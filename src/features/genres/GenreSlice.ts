@@ -19,18 +19,11 @@ export const initialState: Genre = {
   updated_at: "",
 };
 
-//TODO - verificar a necessidade de incluir no initialState
-/*
-is_active
-description
-pivot: { genre_id: "", category_id: ""}
-*/
-
 function getGenres(params: GenreParams) {
-  const { page = 1, perPage = 10, is_active = true, search } = params;
+  const { page = 1, per_page = 10, is_active = true, search } = params;
   return `${endpointUrl}?${parseQueryParams({
     page,
-    perPage,
+    per_page,
     search,
     is_active,
   })}`;
@@ -40,7 +33,7 @@ function parseQueryParams(params: GenreParams) {
   const query = new URLSearchParams();
 
   params.page && query.append("page", params.page.toString());
-  params.perPage && query.append("per_page", params.perPage.toString());
+  params.per_page && query.append("per_page", params.per_page.toString());
   params.search && query.append("search", params.search);
   params.is_active && query.append("is_active", params.is_active.toString());
 

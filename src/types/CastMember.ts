@@ -36,7 +36,7 @@ export interface Meta {
 
 export interface CastMemberParams {
   page?: number;
-  perPage?: number;
+  per_page?: number;
   search?: string;
   type?: number;
 }

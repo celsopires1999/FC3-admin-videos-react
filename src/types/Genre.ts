@@ -38,7 +38,7 @@ export interface Meta {
 
 export interface GenreParams {
   page?: number;
-  perPage?: number;
+  per_page?: number;
   search?: string;
   is_active?: boolean;
 }

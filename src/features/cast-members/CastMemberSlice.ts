@@ -18,10 +18,10 @@ export const initialState: CastMember = {
 };
 
 function getCastMembers(params: CastMemberParams) {
-  const { page = 1, perPage = 10, type, search } = params;
+  const { page = 1, per_page = 10, type, search } = params;
   return `${endpointUrl}?${parseQueryParams({
     page,
-    perPage,
+    per_page,
     search,
     type,
   })}`;
@@ -31,7 +31,7 @@ function parseQueryParams(params: CastMemberParams) {
   const query = new URLSearchParams();
 
   params.page && query.append("page", params.page.toString());
-  params.perPage && query.append("per_page", params.perPage.toString());
+  params.per_page && query.append("per_page", params.per_page.toString());
   params.search && query.append("search", params.search);
   params.type && query.append("type", params.type.toString());
 

@@ -13,7 +13,7 @@ import { CastMembersTable } from "./components/CastMembersTable";
 const initialOptions = {
   page: 1,
   search: "",
-  perPage: 10,
+  per_page: 10,
   rowsPerPage: [10, 20, 30],
 };
 
@@ -32,8 +32,8 @@ export const CastMemberList = () => {
     setOptions({ ...options, page: page + 1 });
   }
 
-  function handleOnPageSizeChange(perPage: number) {
-    setOptions({ ...options, perPage });
+  function handleOnPageSizeChange(per_page: number) {
+    setOptions({ ...options, per_page: per_page });
   }
 
   function handleFilterChange(filterModel: GridFilterModel): void {
@@ -89,7 +89,7 @@ export const CastMemberList = () => {
       <CastMembersTable
         data={data}
         isFetching={isFetching}
-        perPage={options.perPage}
+        perPage={options.per_page}
         rowsPerPage={options.rowsPerPage}
         handleDelete={handleDeleteCastMember}
         handleOnPageChange={handleOnPageChange}

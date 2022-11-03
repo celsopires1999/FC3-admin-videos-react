@@ -676,11 +676,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                 <div
                   aria-rowindex="2"
                   aria-selected="false"
-                  class="MuiDataGrid-row"
+                  class="MuiDataGrid-row MuiDataGrid-row--dynamicHeight"
                   data-id="06fe24ca-71cc-4d55-9a64-82f953501b34"
                   data-rowindex="0"
                   role="row"
-                  style="max-height: 52px; min-height: 52px;"
+                  style="max-height: none; min-height: auto;"
                 >
                   <div
                     aria-colindex="1"
@@ -689,7 +689,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="0"
                     data-field="name"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <a
@@ -710,7 +710,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="1"
                     data-field="description"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <div
@@ -726,7 +726,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="2"
                     data-field="is_active"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <p
@@ -742,7 +742,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="3"
                     data-field="created_at"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <div
@@ -758,7 +758,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="4"
                     data-field="id"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <button
@@ -788,11 +788,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                 <div
                   aria-rowindex="3"
                   aria-selected="false"
-                  class="MuiDataGrid-row MuiDataGrid-row--lastVisible"
+                  class="MuiDataGrid-row MuiDataGrid-row--lastVisible MuiDataGrid-row--dynamicHeight"
                   data-id="07bcf27a-838e-4a05-a8a3-4c7182b9ec81"
                   data-rowindex="1"
                   role="row"
-                  style="max-height: 52px; min-height: 52px;"
+                  style="max-height: none; min-height: auto;"
                 >
                   <div
                     aria-colindex="1"
@@ -801,7 +801,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="0"
                     data-field="name"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <a
@@ -822,7 +822,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="1"
                     data-field="description"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <div
@@ -838,7 +838,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="2"
                     data-field="is_active"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <p
@@ -854,7 +854,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="3"
                     data-field="created_at"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <div
@@ -870,7 +870,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="4"
                     data-field="id"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <button
@@ -1676,11 +1676,11 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                 <div
                   aria-rowindex="2"
                   aria-selected="false"
-                  class="MuiDataGrid-row"
+                  class="MuiDataGrid-row MuiDataGrid-row--dynamicHeight"
                   data-id="06fe24ca-71cc-4d55-9a64-82f953501b34"
                   data-rowindex="0"
                   role="row"
-                  style="max-height: 52px; min-height: 52px;"
+                  style="max-height: none; min-height: auto;"
                 >
                   <div
                     aria-colindex="1"
@@ -1689,7 +1689,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="0"
                     data-field="name"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <a
@@ -1710,7 +1710,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="1"
                     data-field="description"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <div
@@ -1726,7 +1726,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="2"
                     data-field="is_active"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <p
@@ -1742,7 +1742,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="3"
                     data-field="created_at"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <div
@@ -1758,7 +1758,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="4"
                     data-field="id"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <button
@@ -1788,11 +1788,11 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                 <div
                   aria-rowindex="3"
                   aria-selected="false"
-                  class="MuiDataGrid-row MuiDataGrid-row--lastVisible"
+                  class="MuiDataGrid-row MuiDataGrid-row--lastVisible MuiDataGrid-row--dynamicHeight"
                   data-id="07bcf27a-838e-4a05-a8a3-4c7182b9ec81"
                   data-rowindex="1"
                   role="row"
-                  style="max-height: 52px; min-height: 52px;"
+                  style="max-height: none; min-height: auto;"
                 >
                   <div
                     aria-colindex="1"
@@ -1801,7 +1801,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="0"
                     data-field="name"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <a
@@ -1822,7 +1822,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="1"
                     data-field="description"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <div
@@ -1838,7 +1838,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="2"
                     data-field="is_active"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <p
@@ -1854,7 +1854,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="3"
                     data-field="created_at"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <div
@@ -1870,7 +1870,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="4"
                     data-field="id"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <button
