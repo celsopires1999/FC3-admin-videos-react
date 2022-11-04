@@ -185,7 +185,6 @@ exports[`CastMemberList should render cast member list page 1`] = `
               >
                 <div
                   aria-colindex="1"
-                  aria-label="Name"
                   aria-sort="none"
                   class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                   data-field="name"
@@ -203,13 +202,11 @@ exports[`CastMemberList should render cast member list page 1`] = `
                       <div
                         class="MuiDataGrid-columnHeaderTitleContainerContent"
                       >
-                        <div
-                          aria-label=""
-                          class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                          data-mui-internal-clone-element="true"
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                         >
                           Name
-                        </div>
+                        </p>
                       </div>
                       <div
                         class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -287,7 +284,6 @@ exports[`CastMemberList should render cast member list page 1`] = `
                 </div>
                 <div
                   aria-colindex="2"
-                  aria-label="Type"
                   aria-sort="none"
                   class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                   data-field="type"
@@ -305,13 +301,11 @@ exports[`CastMemberList should render cast member list page 1`] = `
                       <div
                         class="MuiDataGrid-columnHeaderTitleContainerContent"
                       >
-                        <div
-                          aria-label=""
-                          class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                          data-mui-internal-clone-element="true"
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                         >
                           Type
-                        </div>
+                        </p>
                       </div>
                       <div
                         class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -344,11 +338,11 @@ exports[`CastMemberList should render cast member list page 1`] = `
                       class="MuiDataGrid-menuIcon"
                     >
                       <button
-                        aria-controls=":ra:"
+                        aria-controls=":r9:"
                         aria-haspopup="true"
                         aria-label="Menu"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                        id=":rb:"
+                        id=":ra:"
                         tabindex="-1"
                         title="Menu"
                         type="button"
@@ -389,7 +383,6 @@ exports[`CastMemberList should render cast member list page 1`] = `
                 </div>
                 <div
                   aria-colindex="3"
-                  aria-label="Created At"
                   aria-sort="none"
                   class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                   data-field="created_at"
@@ -407,13 +400,11 @@ exports[`CastMemberList should render cast member list page 1`] = `
                       <div
                         class="MuiDataGrid-columnHeaderTitleContainerContent"
                       >
-                        <div
-                          aria-label=""
-                          class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                          data-mui-internal-clone-element="true"
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                         >
                           Created At
-                        </div>
+                        </p>
                       </div>
                       <div
                         class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -446,11 +437,11 @@ exports[`CastMemberList should render cast member list page 1`] = `
                       class="MuiDataGrid-menuIcon"
                     >
                       <button
-                        aria-controls=":rd:"
+                        aria-controls=":rb:"
                         aria-haspopup="true"
                         aria-label="Menu"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                        id=":re:"
+                        id=":rc:"
                         tabindex="-1"
                         title="Menu"
                         type="button"
@@ -491,7 +482,6 @@ exports[`CastMemberList should render cast member list page 1`] = `
                 </div>
                 <div
                   aria-colindex="4"
-                  aria-label="Actions"
                   aria-sort="none"
                   class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                   data-field="id"
@@ -509,13 +499,11 @@ exports[`CastMemberList should render cast member list page 1`] = `
                       <div
                         class="MuiDataGrid-columnHeaderTitleContainerContent"
                       >
-                        <div
-                          aria-label=""
-                          class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                          data-mui-internal-clone-element="true"
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                         >
                           Actions
-                        </div>
+                        </p>
                       </div>
                       <div
                         class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -548,11 +536,11 @@ exports[`CastMemberList should render cast member list page 1`] = `
                       class="MuiDataGrid-menuIcon"
                     >
                       <button
-                        aria-controls=":rg:"
+                        aria-controls=":rd:"
                         aria-haspopup="true"
                         aria-label="Menu"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                        id=":rh:"
+                        id=":re:"
                         tabindex="-1"
                         title="Menu"
                         type="button"

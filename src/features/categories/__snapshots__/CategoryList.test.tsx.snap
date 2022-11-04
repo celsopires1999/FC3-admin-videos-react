@@ -185,7 +185,6 @@ exports[`CategoryList should render category list page 1`] = `
               >
                 <div
                   aria-colindex="1"
-                  aria-label="Name"
                   aria-sort="none"
                   class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                   data-field="name"
@@ -203,13 +202,11 @@ exports[`CategoryList should render category list page 1`] = `
                       <div
                         class="MuiDataGrid-columnHeaderTitleContainerContent"
                       >
-                        <div
-                          aria-label=""
-                          class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                          data-mui-internal-clone-element="true"
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                         >
                           Name
-                        </div>
+                        </p>
                       </div>
                       <div
                         class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -287,7 +284,6 @@ exports[`CategoryList should render category list page 1`] = `
                 </div>
                 <div
                   aria-colindex="2"
-                  aria-label="Description"
                   aria-sort="none"
                   class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                   data-field="description"
@@ -305,13 +301,11 @@ exports[`CategoryList should render category list page 1`] = `
                       <div
                         class="MuiDataGrid-columnHeaderTitleContainerContent"
                       >
-                        <div
-                          aria-label=""
-                          class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                          data-mui-internal-clone-element="true"
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                         >
                           Description
-                        </div>
+                        </p>
                       </div>
                       <div
                         class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -344,11 +338,11 @@ exports[`CategoryList should render category list page 1`] = `
                       class="MuiDataGrid-menuIcon"
                     >
                       <button
-                        aria-controls=":ra:"
+                        aria-controls=":r9:"
                         aria-haspopup="true"
                         aria-label="Menu"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                        id=":rb:"
+                        id=":ra:"
                         tabindex="-1"
                         title="Menu"
                         type="button"
@@ -389,7 +383,6 @@ exports[`CategoryList should render category list page 1`] = `
                 </div>
                 <div
                   aria-colindex="3"
-                  aria-label="Active?"
                   aria-sort="none"
                   class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--alignCenter MuiDataGrid-columnHeader--sortable"
                   data-field="is_active"
@@ -407,13 +400,110 @@ exports[`CategoryList should render category list page 1`] = `
                       <div
                         class="MuiDataGrid-columnHeaderTitleContainerContent"
                       >
-                        <div
-                          aria-label=""
-                          class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                          data-mui-internal-clone-element="true"
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                         >
                           Active?
-                        </div>
+                        </p>
+                      </div>
+                      <div
+                        class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
+                      >
+                        <button
+                          aria-label="Sort"
+                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
+                          tabindex="-1"
+                          title="Sort"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall MuiDataGrid-sortIcon css-ptiqhd-MuiSvgIcon-root"
+                            data-testid="ArrowUpwardIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                            />
+                          </svg>
+                          <span
+                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiDataGrid-menuIcon"
+                    >
+                      <button
+                        aria-controls=":rb:"
+                        aria-haspopup="true"
+                        aria-label="Menu"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
+                        id=":rc:"
+                        tabindex="-1"
+                        title="Menu"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                          data-testid="TripleDotsVerticalIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiDataGrid-columnSeparator MuiDataGrid-columnSeparator--sideRight"
+                    style="min-height: 56px; opacity: 1;"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiDataGrid-iconSeparator css-i4bv87-MuiSvgIcon-root"
+                      data-testid="SeparatorIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M11 19V5h2v14z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  aria-colindex="4"
+                  aria-sort="none"
+                  class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
+                  data-field="created_at"
+                  role="columnheader"
+                  style="height: 56px; width: 0px; min-width: 0; max-width: 0;"
+                  tabindex="-1"
+                >
+                  <div
+                    class="MuiDataGrid-columnHeaderDraggableContainer"
+                    draggable="false"
+                  >
+                    <div
+                      class="MuiDataGrid-columnHeaderTitleContainer"
+                    >
+                      <div
+                        class="MuiDataGrid-columnHeaderTitleContainerContent"
+                      >
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
+                        >
+                          Created At
+                        </p>
                       </div>
                       <div
                         class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -490,110 +580,7 @@ exports[`CategoryList should render category list page 1`] = `
                   </div>
                 </div>
                 <div
-                  aria-colindex="4"
-                  aria-label="Created At"
-                  aria-sort="none"
-                  class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
-                  data-field="created_at"
-                  role="columnheader"
-                  style="height: 56px; width: 0px; min-width: 0; max-width: 0;"
-                  tabindex="-1"
-                >
-                  <div
-                    class="MuiDataGrid-columnHeaderDraggableContainer"
-                    draggable="false"
-                  >
-                    <div
-                      class="MuiDataGrid-columnHeaderTitleContainer"
-                    >
-                      <div
-                        class="MuiDataGrid-columnHeaderTitleContainerContent"
-                      >
-                        <div
-                          aria-label=""
-                          class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                          data-mui-internal-clone-element="true"
-                        >
-                          Created At
-                        </div>
-                      </div>
-                      <div
-                        class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
-                      >
-                        <button
-                          aria-label="Sort"
-                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                          tabindex="-1"
-                          title="Sort"
-                          type="button"
-                        >
-                          <svg
-                            aria-hidden="true"
-                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall MuiDataGrid-sortIcon css-ptiqhd-MuiSvgIcon-root"
-                            data-testid="ArrowUpwardIcon"
-                            focusable="false"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
-                            />
-                          </svg>
-                          <span
-                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                          />
-                        </button>
-                      </div>
-                    </div>
-                    <div
-                      class="MuiDataGrid-menuIcon"
-                    >
-                      <button
-                        aria-controls=":rg:"
-                        aria-haspopup="true"
-                        aria-label="Menu"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                        id=":rh:"
-                        tabindex="-1"
-                        title="Menu"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
-                          data-testid="TripleDotsVerticalIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                        />
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiDataGrid-columnSeparator MuiDataGrid-columnSeparator--sideRight"
-                    style="min-height: 56px; opacity: 1;"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiDataGrid-iconSeparator css-i4bv87-MuiSvgIcon-root"
-                      data-testid="SeparatorIcon"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M11 19V5h2v14z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div
                   aria-colindex="5"
-                  aria-label="Actions"
                   aria-sort="none"
                   class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                   data-field="id"
@@ -611,13 +598,11 @@ exports[`CategoryList should render category list page 1`] = `
                       <div
                         class="MuiDataGrid-columnHeaderTitleContainerContent"
                       >
-                        <div
-                          aria-label=""
-                          class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                          data-mui-internal-clone-element="true"
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                         >
                           Actions
-                        </div>
+                        </p>
                       </div>
                       <div
                         class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -650,11 +635,11 @@ exports[`CategoryList should render category list page 1`] = `
                       class="MuiDataGrid-menuIcon"
                     >
                       <button
-                        aria-controls=":rj:"
+                        aria-controls=":rf:"
                         aria-haspopup="true"
                         aria-label="Menu"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                        id=":rk:"
+                        id=":rg:"
                         tabindex="-1"
                         title="Menu"
                         type="button"

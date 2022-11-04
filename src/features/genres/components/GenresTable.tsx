@@ -1,12 +1,5 @@
 import DeleteIcon from "@mui/icons-material/Delete";
-import {
-  Chip,
-  Container,
-  IconButton,
-  ListItem,
-  Paper,
-  Typography,
-} from "@mui/material";
+import { Chip, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import {
   DataGrid,
@@ -19,7 +12,7 @@ import { Link } from "react-router-dom";
 import { Category } from "../../../types/Category";
 import { Results } from "../../../types/Genre";
 
-type Props = {
+export type Props = {
   data: Results | undefined;
   perPage: number;
   isFetching: boolean;
