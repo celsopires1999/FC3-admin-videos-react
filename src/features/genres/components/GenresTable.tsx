@@ -1,5 +1,12 @@
 import DeleteIcon from "@mui/icons-material/Delete";
-import { IconButton, Typography } from "@mui/material";
+import {
+  Chip,
+  Container,
+  IconButton,
+  ListItem,
+  Paper,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import {
   DataGrid,
@@ -9,6 +16,7 @@ import {
   GridToolbar,
 } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
+import { Category } from "../../../types/Category";
 import { Results } from "../../../types/Genre";
 
 type Props = {
@@ -26,7 +34,7 @@ type Props = {
 interface GridRowsProps {
   id: string;
   name: string;
-  categories: string;
+  categories: Category[];
   created_at: string;
 }
 
@@ -50,28 +58,38 @@ export function GenresTable({
   const columns: GridColDef[] = [
     {
       field: "name",
-      headerName: "Name",
+      renderHeader: () => renderCustomHeader("Name"),
       flex: 20,
+
       renderCell: renderNameCell,
     },
     {
       field: "categories",
-      headerName: "Categories",
-      flex: 60,
+      renderHeader: () => renderCustomHeader("Categories"),
+      flex: 50,
       renderCell: renderCategoriesCell,
     },
     {
       field: "created_at",
-      headerName: "Created At",
-      flex: 10,
+      renderHeader: () => renderCustomHeader("Created At"),
+      flex: 20,
+      renderCell: renderCreatedAtCell,
     },
     {
       field: "id",
-      headerName: "Actions",
+      renderHeader: () => renderCustomHeader("Actions"),
       flex: 10,
       renderCell: renderActionsCell,
     },
   ];
+
+  function renderCustomHeader(header: string) {
+    return (
+      <Typography color={"primary"} fontWeight={500}>
+        {header}
+      </Typography>
+    );
+  }
 
   function renderNameCell(rowData: GridRenderCellParams) {
     return (
@@ -84,8 +102,35 @@ export function GenresTable({
     );
   }
 
-  function renderCategoriesCell(rowData: GridRenderCellParams) {
-    return <Typography color="primary">{rowData.value}</Typography>;
+  function renderCategoriesCell(rowData: GridRenderCellParams<Category[]>) {
+    const categories = rowData.value ?? [];
+    return (
+      <Box
+        sx={{
+          display: "inline",
+        }}
+      >
+        {categories.map((c) => (
+          <Chip
+            key={c.id}
+            label={c.name}
+            sx={{
+              marginRight: "0.4rem",
+              marginTop: "0.2rem",
+              marginBottom: "0.2rem",
+            }}
+          />
+        ))}
+      </Box>
+    );
+  }
+
+  function renderCreatedAtCell(rowData: GridRenderCellParams) {
+    return (
+      <Typography color="primary">
+        {new Date(rowData.value).toLocaleDateString("pt-BR")}
+      </Typography>
+    );
   }
 
   function renderActionsCell(rowData: GridRenderCellParams) {
@@ -108,8 +153,8 @@ export function GenresTable({
     return genres.map((genre) => ({
       id: genre.id,
       name: genre.name,
-      categories: genre.categories.map((c) => c.name).join(", "),
-      created_at: new Date(genre.created_at).toLocaleDateString("pt-BR"),
+      categories: genre.categories,
+      created_at: genre.created_at,
     }));
   }
 

@@ -51,34 +51,48 @@ export function CategoriesTable({
   const columns: GridColDef[] = [
     {
       field: "name",
-      headerName: "Name",
+      renderHeader: () => renderCustomHeader("Name"),
       flex: 20,
       renderCell: renderNameCell,
     },
     {
       field: "description",
-      headerName: "Description",
+      renderHeader: () => renderCustomHeader("Description"),
       flex: 40,
+      renderCell: renderDefaultCell,
     },
     {
       field: "is_active",
-      headerName: "Active?",
+      renderHeader: () => renderCustomHeader("Active?"),
       flex: 10,
       type: "boolean",
       renderCell: renderIsActiveCell,
     },
     {
       field: "created_at",
-      headerName: "Created At",
+      renderHeader: () => renderCustomHeader("Created At"),
       flex: 20,
+      renderCell: renderCreatedAtCell,
     },
     {
       field: "id",
-      headerName: "Actions",
+      renderHeader: () => renderCustomHeader("Actions"),
       flex: 10,
       renderCell: renderActionsCell,
     },
   ];
+
+  function renderCustomHeader(header: string) {
+    return (
+      <Typography color={"primary"} fontWeight={500}>
+        {header}
+      </Typography>
+    );
+  }
+
+  function renderDefaultCell(rowData: GridRenderCellParams) {
+    return <Typography color="primary">{rowData.value}</Typography>;
+  }
 
   function renderNameCell(rowData: GridRenderCellParams) {
     return (
@@ -95,6 +109,14 @@ export function CategoriesTable({
     return (
       <Typography color={rowData.value ? "primary" : "secondary"}>
         {rowData.value ? "Active" : "Inactive"}
+      </Typography>
+    );
+  }
+
+  function renderCreatedAtCell(rowData: GridRenderCellParams) {
+    return (
+      <Typography color="primary">
+        {new Date(rowData.value).toLocaleDateString("pt-BR")}
       </Typography>
     );
   }
@@ -120,7 +142,7 @@ export function CategoriesTable({
       name: category.name,
       description: category.description,
       is_active: category.is_active,
-      created_at: new Date(category.created_at).toLocaleDateString("pt-BR"),
+      created_at: category.created_at,
     }));
   }
 
