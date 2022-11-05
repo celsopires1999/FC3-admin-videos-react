@@ -1,9 +1,9 @@
 import { renderWithProviders } from "../../../utils/test-utils";
-import { genreResponsePage1, genreWithoutCategories } from "../mocks";
+import { mockGenreResponsePage1, mockGenreWithoutCategories } from "../mocks";
 import { GenresTable, Props as GenresTableProps } from "./GenresTable";
 
 const Props: GenresTableProps = {
-  data: genreResponsePage1,
+  data: mockGenreResponsePage1,
   perPage: 10,
   isFetching: false,
   rowsPerPage: [10, 20, 30],
@@ -35,7 +35,7 @@ describe("GenresTable", () => {
 
   it("should render genres table without categories", () => {
     const { asFragment } = renderWithProviders(
-      <GenresTable {...Props} data={genreWithoutCategories} />
+      <GenresTable {...Props} data={mockGenreWithoutCategories} />
     );
     expect(asFragment()).toMatchSnapshot();
   });

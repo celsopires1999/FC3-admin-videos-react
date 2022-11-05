@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { Category } from "../../../types/Category";
 import { Genre } from "../../../types/Genre";
 
-type Props = {
+export type Props = {
   genre: Genre;
   categories?: Category[];
   isDisabled?: boolean;

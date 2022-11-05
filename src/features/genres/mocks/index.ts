@@ -1,4 +1,132 @@
-export const genreWithoutCategories = {
+export const mockGenre = {
+  data: {
+    id: "f288d0f4-1a6b-42bc-9252-7fcc3b3e94aa",
+    name: "Terror",
+    is_active: true,
+    deleted_at: null,
+    created_at: "2022-11-04 20:21:00",
+    updated_at: "2022-11-04 20:21:00",
+    categories: [
+      {
+        id: "07bcf27a-838e-4a05-a8a3-4c7182b9ec81",
+        name: "Navy",
+        description: null,
+        is_active: true,
+        deleted_at: null,
+        created_at: "2022-01-17 00:44:21",
+        updated_at: "2022-01-17 00:44:21",
+        pivot: {
+          genre_id: "f288d0f4-1a6b-42bc-9252-7fcc3b3e94aa",
+          category_id: "07bcf27a-838e-4a05-a8a3-4c7182b9ec81",
+        },
+      },
+      {
+        id: "141f06f0-0dc5-4657-b73a-7ca63b93160c",
+        name: "DarkOliveGreen",
+        description: "Architecto iusto natus et quisquam tempora.",
+        is_active: true,
+        deleted_at: null,
+        created_at: "2022-01-17 00:44:21",
+        updated_at: "2022-01-17 00:44:21",
+        pivot: {
+          genre_id: "f288d0f4-1a6b-42bc-9252-7fcc3b3e94aa",
+          category_id: "141f06f0-0dc5-4657-b73a-7ca63b93160c",
+        },
+      },
+      {
+        id: "18c7f8bf-a626-4b36-867f-6fb957aab558",
+        name: "LimeGreen",
+        description: "Iure quas illo laborum accusantium amet quibusdam quo.",
+        is_active: true,
+        deleted_at: null,
+        created_at: "2022-01-17 00:44:21",
+        updated_at: "2022-01-17 00:44:21",
+        pivot: {
+          genre_id: "f288d0f4-1a6b-42bc-9252-7fcc3b3e94aa",
+          category_id: "18c7f8bf-a626-4b36-867f-6fb957aab558",
+        },
+      },
+      {
+        id: "23cc2fad-dd53-45c4-8561-e7e6219b2906",
+        name: "Darkorange",
+        description: "Odit omnis qui sit eaque atque et in.",
+        is_active: true,
+        deleted_at: null,
+        created_at: "2022-01-17 00:44:21",
+        updated_at: "2022-01-17 00:44:21",
+        pivot: {
+          genre_id: "f288d0f4-1a6b-42bc-9252-7fcc3b3e94aa",
+          category_id: "23cc2fad-dd53-45c4-8561-e7e6219b2906",
+        },
+      },
+      {
+        id: "2d757c67-8d72-4fdc-b5a3-7bbc86ccde5e",
+        name: "LightSeaGreen",
+        description: "Molestiae qui sunt qui modi quibusdam maiores.",
+        is_active: true,
+        deleted_at: null,
+        created_at: "2022-01-17 00:44:21",
+        updated_at: "2022-01-17 00:44:21",
+        pivot: {
+          genre_id: "f288d0f4-1a6b-42bc-9252-7fcc3b3e94aa",
+          category_id: "2d757c67-8d72-4fdc-b5a3-7bbc86ccde5e",
+        },
+      },
+    ],
+  },
+};
+
+export const mockCategories = {
+  data: [
+    {
+      id: "07bcf27a-838e-4a05-a8a3-4c7182b9ec81",
+      name: "Navy",
+      description: null,
+      is_active: true,
+      deleted_at: null,
+      created_at: "2022-01-17 00:44:21",
+      updated_at: "2022-01-17 00:44:21",
+    },
+    {
+      id: "141f06f0-0dc5-4657-b73a-7ca63b93160c",
+      name: "DarkOliveGreen",
+      description: "Architecto iusto natus et quisquam tempora.",
+      is_active: true,
+      deleted_at: null,
+      created_at: "2022-01-17 00:44:21",
+      updated_at: "2022-01-17 00:44:21",
+    },
+    {
+      id: "18c7f8bf-a626-4b36-867f-6fb957aab558",
+      name: "LimeGreen",
+      description: "Iure quas illo laborum accusantium amet quibusdam quo.",
+      is_active: true,
+      deleted_at: null,
+      created_at: "2022-01-17 00:44:21",
+      updated_at: "2022-01-17 00:44:21",
+    },
+    {
+      id: "23cc2fad-dd53-45c4-8561-e7e6219b2906",
+      name: "Darkorange",
+      description: "Odit omnis qui sit eaque atque et in.",
+      is_active: true,
+      deleted_at: null,
+      created_at: "2022-01-17 00:44:21",
+      updated_at: "2022-01-17 00:44:21",
+    },
+    {
+      id: "2d757c67-8d72-4fdc-b5a3-7bbc86ccde5e",
+      name: "LightSeaGreen",
+      description: "Molestiae qui sunt qui modi quibusdam maiores.",
+      is_active: true,
+      deleted_at: null,
+      created_at: "2022-01-17 00:44:21",
+      updated_at: "2022-01-17 00:44:21",
+    },
+  ],
+};
+
+export const mockGenreWithoutCategories = {
   data: [
     {
       id: "f288d0f4-1a6b-42bc-9252-7fcc3b3e94aa",
@@ -27,7 +155,7 @@ export const genreWithoutCategories = {
   },
 };
 
-export const genreResponsePage1 = {
+export const mockGenreResponsePage1 = {
   data: [
     {
       id: "f288d0f4-1a6b-42bc-9252-7fcc3b3e94aa",
@@ -800,7 +928,8 @@ export const genreResponsePage1 = {
     total: 102,
   },
 };
-export const genreResponsePage2 = {
+
+export const mockGenreResponsePage2 = {
   data: [
     {
       id: "13f30040-65eb-4e4b-9cde-fbb620ae55ae",
