@@ -10,6 +10,7 @@ import {
   useGetGenreQuery,
   useUpdateGenreMutation,
 } from "./GenreSlice";
+import { mapGenrePayload } from "./utils";
 
 export const GenreEdit = () => {
   const id = useParams().id ?? "";
@@ -22,11 +23,7 @@ export const GenreEdit = () => {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await updateGenre({
-      id: genreState.id,
-      name: genreState.name,
-      categories_id: genreState.categories.map((c) => c.id),
-    });
+    await updateGenre(mapGenrePayload(genreState));
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

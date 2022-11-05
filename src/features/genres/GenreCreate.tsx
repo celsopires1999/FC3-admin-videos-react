@@ -8,6 +8,7 @@ import {
   useCreateGenreMutation,
   useGetCategoriesForGenreQuery,
 } from "./GenreSlice";
+import { mapGenrePayload } from "./utils";
 
 export const GenreCreate = () => {
   const { enqueueSnackbar } = useSnackbar();
@@ -17,11 +18,7 @@ export const GenreCreate = () => {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await createGenre({
-      id: genreState.id,
-      name: genreState.name,
-      categories_id: genreState.categories.map((c) => c.id),
-    });
+    await createGenre(mapGenrePayload(genreState));
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
