@@ -48,7 +48,7 @@ export const GenreList = () => {
       });
     }
     if (deleteGenreStatus.error) {
-      enqueueSnackbar(`Cast Member not deleted`, {
+      enqueueSnackbar(`Genre not deleted`, {
         variant: "error",
       });
     }
