@@ -1,20 +1,22 @@
-export interface CastMember {
+import { Category } from "./Category";
+
+export interface Genre {
   id: string;
   name: string;
-  type: number;
+  categories: Category[];
   deleted_at: string | null;
   created_at: string;
   updated_at: string;
 }
 
 export interface Results {
-  data: CastMember[];
+  data: Genre[];
   links: Links;
   meta: Meta;
 }
 
 export interface Result {
-  data: CastMember;
+  data: Genre;
 }
 
 export interface Links {
@@ -34,9 +36,15 @@ export interface Meta {
   current_page: number;
 }
 
-export interface CastMemberParams {
+export interface GenreParams {
   page?: number;
   per_page?: number;
   search?: string;
-  type?: number;
+  is_active?: boolean;
+}
+
+export interface GenrePayload {
+  id: string;
+  name: string;
+  categories_id?: string[];
 }

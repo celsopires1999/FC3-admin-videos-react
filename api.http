@@ -1,8 +1,10 @@
 ###
 GET http://host.docker.internal:8000/api/categories
 Content-Type: application/json
-
 ###
+
+GET http://host.docker.internal:8000/api/categories?all=true
+Content-Type: application/json
 
 ###
 GET http://host.docker.internal:8000/api/categories?page=2&per_page=15
@@ -52,3 +54,28 @@ Content-Type: application/json
 ###
 GET http://host.docker.internal:8000/api/cast_members/01a20423-248f-48a4-82d6-6b17a11961b8
 Content-Type: application/json
+
+###
+GET http://host.docker.internal:8000/api/genres
+Content-Type: application/json
+
+###
+GET http://host.docker.internal:8000/api/genres/01201e93-17ec-449e-b947-85a7b956fec5
+Content-Type: application/json
+
+###
+
+POST http://host.docker.internal:8000/api/genres
+Content-Type: application/json
+
+{
+    "name": "Terror",
+    "categories_id": ["06fe24ca-71cc-4d55-9a64-82f953501b34"]
+}
+
+###
+
+DELETE http://host.docker.internal:8000/api/genres/8048874c-7d8a-4f79-af29-07079aaee000
+Content-Type: application/json
+
+###

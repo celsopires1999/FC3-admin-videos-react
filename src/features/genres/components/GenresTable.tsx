@@ -1,5 +1,5 @@
 import DeleteIcon from "@mui/icons-material/Delete";
-import { IconButton, Typography } from "@mui/material";
+import { Chip, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import {
   DataGrid,
@@ -9,9 +9,10 @@ import {
   GridToolbar,
 } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
-import { Results } from "../../../types/Category";
+import { Category } from "../../../types/Category";
+import { Results } from "../../../types/Genre";
 
-type Props = {
+export type Props = {
   data: Results | undefined;
   perPage: number;
   isFetching: boolean;
@@ -26,12 +27,11 @@ type Props = {
 interface GridRowsProps {
   id: string;
   name: string;
-  description: string | null;
-  is_active: boolean;
+  categories: Category[];
   created_at: string;
 }
 
-export function CategoriesTable({
+export function GenresTable({
   data,
   perPage,
   isFetching,
@@ -53,20 +53,14 @@ export function CategoriesTable({
       field: "name",
       renderHeader: () => renderCustomHeader("Name"),
       flex: 20,
+
       renderCell: renderNameCell,
     },
     {
-      field: "description",
-      renderHeader: () => renderCustomHeader("Description"),
-      flex: 40,
-      renderCell: renderDefaultCell,
-    },
-    {
-      field: "is_active",
-      renderHeader: () => renderCustomHeader("Active?"),
-      flex: 10,
-      type: "boolean",
-      renderCell: renderIsActiveCell,
+      field: "categories",
+      renderHeader: () => renderCustomHeader("Categories"),
+      flex: 50,
+      renderCell: renderCategoriesCell,
     },
     {
       field: "created_at",
@@ -90,26 +84,37 @@ export function CategoriesTable({
     );
   }
 
-  function renderDefaultCell(rowData: GridRenderCellParams) {
-    return <Typography color="primary">{rowData.value}</Typography>;
-  }
-
   function renderNameCell(rowData: GridRenderCellParams) {
     return (
       <Link
         style={{ textDecoration: "none" }}
-        to={`/categories/edit/${rowData.id}`}
+        to={`/genres/edit/${rowData.id}`}
       >
         <Typography color={"primary"}>{rowData.value}</Typography>
       </Link>
     );
   }
 
-  function renderIsActiveCell(rowData: GridRenderCellParams) {
+  function renderCategoriesCell(rowData: GridRenderCellParams<Category[]>) {
+    const categories = rowData.value ?? [];
     return (
-      <Typography color={rowData.value ? "primary" : "secondary"}>
-        {rowData.value ? "Active" : "Inactive"}
-      </Typography>
+      <Box
+        sx={{
+          display: "inline",
+        }}
+      >
+        {categories.map((c) => (
+          <Chip
+            key={c.id}
+            label={c.name}
+            sx={{
+              marginRight: "0.4rem",
+              marginTop: "0.2rem",
+              marginBottom: "0.2rem",
+            }}
+          />
+        ))}
+      </Box>
     );
   }
 
@@ -136,13 +141,13 @@ export function CategoriesTable({
 
   const rows: GridRowsProps[] = data ? mapDataToGridRows(data) : [];
 
-  function mapDataToGridRows(results: Results) {
-    return results.data.map((category) => ({
-      id: category.id,
-      name: category.name,
-      description: category.description,
-      is_active: category.is_active,
-      created_at: category.created_at,
+  function mapDataToGridRows(data: Results) {
+    const { data: genres } = data;
+    return genres.map((genre) => ({
+      id: genre.id,
+      name: genre.name,
+      categories: genre.categories,
+      created_at: genre.created_at,
     }));
   }
 

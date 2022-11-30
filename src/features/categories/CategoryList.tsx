@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { GridFilterModel } from "@mui/x-data-grid";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ import { CategoriesTable } from "./components/CategoriesTable";
 const initialOptions = {
   page: 1,
   search: "",
-  perPage: 10,
+  per_page: 10,
   rowsPerPage: [10, 20, 30],
 };
 
@@ -30,8 +30,8 @@ export const CategoryList = () => {
     setOptions({ ...options, page: page + 1 });
   }
 
-  function handleOnPageSizeChange(perPage: number) {
-    setOptions({ ...options, perPage });
+  function handleOnPageSizeChange(per_page: number) {
+    setOptions({ ...options, per_page });
   }
 
   function handleFilterChange(filterModel: GridFilterModel): void {
@@ -58,23 +58,33 @@ export const CategoryList = () => {
 
   return (
     <Box maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      {/* New Category Button*/}
-      <Box display="flex" justifyContent="flex-end">
-        <Button
-          variant="contained"
-          color="secondary"
-          component={Link}
-          to="/categories/create"
-          sx={{ mb: "1rem" }}
-        >
-          New Category
-        </Button>
-      </Box>
+      {/* Header */}
+      <Grid container>
+        <Grid item xs={6}>
+          <Box display="flex" justifyContent="flex-start">
+            <Typography variant="h4">Categories List</Typography>
+          </Box>
+        </Grid>
+        {/* New Category Button*/}
+        <Grid item xs={6}>
+          <Box display="flex" justifyContent="flex-end">
+            <Button
+              variant="contained"
+              color="secondary"
+              component={Link}
+              to="/categories/create"
+              sx={{ mb: "1rem" }}
+            >
+              New Category
+            </Button>
+          </Box>
+        </Grid>
+      </Grid>
       {/* Category Table */}
       <CategoriesTable
         data={data}
         isFetching={isFetching}
-        perPage={options.perPage}
+        perPage={options.per_page}
         rowsPerPage={options.rowsPerPage}
         handleDelete={handleDeleteCategory}
         handleOnPageChange={handleOnPageChange}

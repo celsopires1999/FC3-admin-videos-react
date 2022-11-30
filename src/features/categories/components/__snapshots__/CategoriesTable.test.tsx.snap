@@ -20,9 +20,9 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
             <button
               aria-haspopup="menu"
               aria-label="Export"
-              aria-labelledby=":r1f:"
+              aria-labelledby=":r15:"
               class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
-              id=":r1e:"
+              id=":r14:"
               tabindex="0"
               type="button"
             >
@@ -70,7 +70,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
-                  id=":r1g:"
+                  id=":r16:"
                   placeholder="Search…"
                   type="search"
                   value=""
@@ -147,7 +147,6 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
             >
               <div
                 aria-colindex="1"
-                aria-label="Name"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="name"
@@ -165,13 +164,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Name
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -204,11 +201,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r1j:"
+                      aria-controls=":r19:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r1k:"
+                      id=":r1a:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -249,7 +246,6 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
               </div>
               <div
                 aria-colindex="2"
-                aria-label="Description"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="description"
@@ -267,13 +263,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Description
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -306,11 +300,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r1m:"
+                      aria-controls=":r1b:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r1n:"
+                      id=":r1c:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -351,7 +345,6 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
               </div>
               <div
                 aria-colindex="3"
-                aria-label="Active?"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--alignCenter MuiDataGrid-columnHeader--sortable"
                 data-field="is_active"
@@ -369,13 +362,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Active?
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -408,11 +399,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r1p:"
+                      aria-controls=":r1d:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r1q:"
+                      id=":r1e:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -453,7 +444,6 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
               </div>
               <div
                 aria-colindex="4"
-                aria-label="Created At"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="created_at"
@@ -471,13 +461,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Created At
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -510,11 +498,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r1s:"
+                      aria-controls=":r1f:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r1t:"
+                      id=":r1g:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -555,7 +543,6 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
               </div>
               <div
                 aria-colindex="5"
-                aria-label="Actions"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="id"
@@ -573,13 +560,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Actions
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -612,11 +597,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r1v:"
+                      aria-controls=":r1h:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r20:"
+                      id=":r1i:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -676,11 +661,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                 <div
                   aria-rowindex="2"
                   aria-selected="false"
-                  class="MuiDataGrid-row"
+                  class="MuiDataGrid-row MuiDataGrid-row--dynamicHeight"
                   data-id="06fe24ca-71cc-4d55-9a64-82f953501b34"
                   data-rowindex="0"
                   role="row"
-                  style="max-height: 52px; min-height: 52px;"
+                  style="max-height: none; min-height: auto;"
                 >
                   <div
                     aria-colindex="1"
@@ -689,7 +674,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="0"
                     data-field="name"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <a
@@ -706,18 +691,18 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                   <div
                     aria-colindex="2"
                     aria-colspan="1"
-                    class="MuiDataGrid-cell MuiDataGrid-cell--textLeft"
+                    class="MuiDataGrid-cell--withRenderer MuiDataGrid-cell MuiDataGrid-cell--textLeft"
                     data-colindex="1"
                     data-field="description"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
-                    <div
-                      class="MuiDataGrid-cellContent"
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                     >
                       some description
-                    </div>
+                    </p>
                   </div>
                   <div
                     aria-colindex="3"
@@ -726,7 +711,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="2"
                     data-field="is_active"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <p
@@ -738,18 +723,18 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                   <div
                     aria-colindex="4"
                     aria-colspan="1"
-                    class="MuiDataGrid-cell MuiDataGrid-cell--textLeft"
+                    class="MuiDataGrid-cell--withRenderer MuiDataGrid-cell MuiDataGrid-cell--textLeft"
                     data-colindex="3"
                     data-field="created_at"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
-                    <div
-                      class="MuiDataGrid-cellContent"
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                     >
                       30/09/2022
-                    </div>
+                    </p>
                   </div>
                   <div
                     aria-colindex="5"
@@ -758,7 +743,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="4"
                     data-field="id"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <button
@@ -788,11 +773,11 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                 <div
                   aria-rowindex="3"
                   aria-selected="false"
-                  class="MuiDataGrid-row MuiDataGrid-row--lastVisible"
+                  class="MuiDataGrid-row MuiDataGrid-row--lastVisible MuiDataGrid-row--dynamicHeight"
                   data-id="07bcf27a-838e-4a05-a8a3-4c7182b9ec81"
                   data-rowindex="1"
                   role="row"
-                  style="max-height: 52px; min-height: 52px;"
+                  style="max-height: none; min-height: auto;"
                 >
                   <div
                     aria-colindex="1"
@@ -801,7 +786,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="0"
                     data-field="name"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <a
@@ -818,18 +803,18 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                   <div
                     aria-colindex="2"
                     aria-colspan="1"
-                    class="MuiDataGrid-cell MuiDataGrid-cell--textLeft"
+                    class="MuiDataGrid-cell--withRenderer MuiDataGrid-cell MuiDataGrid-cell--textLeft"
                     data-colindex="1"
                     data-field="description"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
-                    <div
-                      class="MuiDataGrid-cellContent"
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                     >
                       some description with is_active is false
-                    </div>
+                    </p>
                   </div>
                   <div
                     aria-colindex="3"
@@ -838,7 +823,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="2"
                     data-field="is_active"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <p
@@ -850,18 +835,18 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                   <div
                     aria-colindex="4"
                     aria-colspan="1"
-                    class="MuiDataGrid-cell MuiDataGrid-cell--textLeft"
+                    class="MuiDataGrid-cell--withRenderer MuiDataGrid-cell MuiDataGrid-cell--textLeft"
                     data-colindex="3"
                     data-field="created_at"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
-                    <div
-                      class="MuiDataGrid-cellContent"
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                     >
                       17/01/2022
-                    </div>
+                    </p>
                   </div>
                   <div
                     aria-colindex="5"
@@ -870,7 +855,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                     data-colindex="4"
                     data-field="id"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <button
@@ -932,7 +917,7 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
               />
               <p
                 class="MuiTablePagination-selectLabel css-pdct74-MuiTablePagination-selectLabel"
-                id=":r1i:"
+                id=":r18:"
               >
                 Rows per page:
               </p>
@@ -943,9 +928,9 @@ exports[`CategoriesTable should render categories table on fetching 1`] = `
                 <div
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-labelledby=":r1i: :r1h:"
+                  aria-labelledby=":r18: :r17:"
                   class="MuiSelect-select MuiTablePagination-select MuiSelect-standard MuiInputBase-input css-194a1fa-MuiSelect-select-MuiInputBase-input"
-                  id=":r1h:"
+                  id=":r17:"
                   role="button"
                   tabindex="0"
                 >
@@ -1147,7 +1132,6 @@ exports[`CategoriesTable should render categories table with data 1`] = `
             >
               <div
                 aria-colindex="1"
-                aria-label="Name"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="name"
@@ -1165,13 +1149,11 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Name
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -1249,7 +1231,6 @@ exports[`CategoriesTable should render categories table with data 1`] = `
               </div>
               <div
                 aria-colindex="2"
-                aria-label="Description"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="description"
@@ -1267,13 +1248,11 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Description
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -1306,11 +1285,11 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":ra:"
+                      aria-controls=":r9:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":rb:"
+                      id=":ra:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -1351,7 +1330,6 @@ exports[`CategoriesTable should render categories table with data 1`] = `
               </div>
               <div
                 aria-colindex="3"
-                aria-label="Active?"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--alignCenter MuiDataGrid-columnHeader--sortable"
                 data-field="is_active"
@@ -1369,13 +1347,110 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Active?
-                      </div>
+                      </p>
+                    </div>
+                    <div
+                      class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
+                    >
+                      <button
+                        aria-label="Sort"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
+                        tabindex="-1"
+                        title="Sort"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall MuiDataGrid-sortIcon css-ptiqhd-MuiSvgIcon-root"
+                          data-testid="ArrowUpwardIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiDataGrid-menuIcon"
+                  >
+                    <button
+                      aria-controls=":rb:"
+                      aria-haspopup="true"
+                      aria-label="Menu"
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
+                      id=":rc:"
+                      tabindex="-1"
+                      title="Menu"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                        data-testid="TripleDotsVerticalIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                        />
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="MuiDataGrid-columnSeparator MuiDataGrid-columnSeparator--sideRight"
+                  style="min-height: 56px; opacity: 1;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiDataGrid-iconSeparator css-i4bv87-MuiSvgIcon-root"
+                    data-testid="SeparatorIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11 19V5h2v14z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                aria-colindex="4"
+                aria-sort="none"
+                class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
+                data-field="created_at"
+                role="columnheader"
+                style="height: 56px; width: 0px; min-width: 0; max-width: 0;"
+                tabindex="-1"
+              >
+                <div
+                  class="MuiDataGrid-columnHeaderDraggableContainer"
+                  draggable="false"
+                >
+                  <div
+                    class="MuiDataGrid-columnHeaderTitleContainer"
+                  >
+                    <div
+                      class="MuiDataGrid-columnHeaderTitleContainerContent"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
+                      >
+                        Created At
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -1452,110 +1527,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                 </div>
               </div>
               <div
-                aria-colindex="4"
-                aria-label="Created At"
-                aria-sort="none"
-                class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
-                data-field="created_at"
-                role="columnheader"
-                style="height: 56px; width: 0px; min-width: 0; max-width: 0;"
-                tabindex="-1"
-              >
-                <div
-                  class="MuiDataGrid-columnHeaderDraggableContainer"
-                  draggable="false"
-                >
-                  <div
-                    class="MuiDataGrid-columnHeaderTitleContainer"
-                  >
-                    <div
-                      class="MuiDataGrid-columnHeaderTitleContainerContent"
-                    >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
-                      >
-                        Created At
-                      </div>
-                    </div>
-                    <div
-                      class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
-                    >
-                      <button
-                        aria-label="Sort"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                        tabindex="-1"
-                        title="Sort"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall MuiDataGrid-sortIcon css-ptiqhd-MuiSvgIcon-root"
-                          data-testid="ArrowUpwardIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                        />
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiDataGrid-menuIcon"
-                  >
-                    <button
-                      aria-controls=":rg:"
-                      aria-haspopup="true"
-                      aria-label="Menu"
-                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":rh:"
-                      tabindex="-1"
-                      title="Menu"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
-                        data-testid="TripleDotsVerticalIcon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                        />
-                      </svg>
-                      <span
-                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                      />
-                    </button>
-                  </div>
-                </div>
-                <div
-                  class="MuiDataGrid-columnSeparator MuiDataGrid-columnSeparator--sideRight"
-                  style="min-height: 56px; opacity: 1;"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiDataGrid-iconSeparator css-i4bv87-MuiSvgIcon-root"
-                    data-testid="SeparatorIcon"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M11 19V5h2v14z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
                 aria-colindex="5"
-                aria-label="Actions"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="id"
@@ -1573,13 +1545,11 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Actions
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -1612,11 +1582,11 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":rj:"
+                      aria-controls=":rf:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":rk:"
+                      id=":rg:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -1676,11 +1646,11 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                 <div
                   aria-rowindex="2"
                   aria-selected="false"
-                  class="MuiDataGrid-row"
+                  class="MuiDataGrid-row MuiDataGrid-row--dynamicHeight"
                   data-id="06fe24ca-71cc-4d55-9a64-82f953501b34"
                   data-rowindex="0"
                   role="row"
-                  style="max-height: 52px; min-height: 52px;"
+                  style="max-height: none; min-height: auto;"
                 >
                   <div
                     aria-colindex="1"
@@ -1689,7 +1659,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="0"
                     data-field="name"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <a
@@ -1706,18 +1676,18 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                   <div
                     aria-colindex="2"
                     aria-colspan="1"
-                    class="MuiDataGrid-cell MuiDataGrid-cell--textLeft"
+                    class="MuiDataGrid-cell--withRenderer MuiDataGrid-cell MuiDataGrid-cell--textLeft"
                     data-colindex="1"
                     data-field="description"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
-                    <div
-                      class="MuiDataGrid-cellContent"
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                     >
                       some description
-                    </div>
+                    </p>
                   </div>
                   <div
                     aria-colindex="3"
@@ -1726,7 +1696,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="2"
                     data-field="is_active"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <p
@@ -1738,18 +1708,18 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                   <div
                     aria-colindex="4"
                     aria-colspan="1"
-                    class="MuiDataGrid-cell MuiDataGrid-cell--textLeft"
+                    class="MuiDataGrid-cell--withRenderer MuiDataGrid-cell MuiDataGrid-cell--textLeft"
                     data-colindex="3"
                     data-field="created_at"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
-                    <div
-                      class="MuiDataGrid-cellContent"
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                     >
                       30/09/2022
-                    </div>
+                    </p>
                   </div>
                   <div
                     aria-colindex="5"
@@ -1758,7 +1728,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="4"
                     data-field="id"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <button
@@ -1788,11 +1758,11 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                 <div
                   aria-rowindex="3"
                   aria-selected="false"
-                  class="MuiDataGrid-row MuiDataGrid-row--lastVisible"
+                  class="MuiDataGrid-row MuiDataGrid-row--lastVisible MuiDataGrid-row--dynamicHeight"
                   data-id="07bcf27a-838e-4a05-a8a3-4c7182b9ec81"
                   data-rowindex="1"
                   role="row"
-                  style="max-height: 52px; min-height: 52px;"
+                  style="max-height: none; min-height: auto;"
                 >
                   <div
                     aria-colindex="1"
@@ -1801,7 +1771,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="0"
                     data-field="name"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <a
@@ -1818,18 +1788,18 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                   <div
                     aria-colindex="2"
                     aria-colspan="1"
-                    class="MuiDataGrid-cell MuiDataGrid-cell--textLeft"
+                    class="MuiDataGrid-cell--withRenderer MuiDataGrid-cell MuiDataGrid-cell--textLeft"
                     data-colindex="1"
                     data-field="description"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
-                    <div
-                      class="MuiDataGrid-cellContent"
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                     >
                       some description with is_active is false
-                    </div>
+                    </p>
                   </div>
                   <div
                     aria-colindex="3"
@@ -1838,7 +1808,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="2"
                     data-field="is_active"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <p
@@ -1850,18 +1820,18 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                   <div
                     aria-colindex="4"
                     aria-colspan="1"
-                    class="MuiDataGrid-cell MuiDataGrid-cell--textLeft"
+                    class="MuiDataGrid-cell--withRenderer MuiDataGrid-cell MuiDataGrid-cell--textLeft"
                     data-colindex="3"
                     data-field="created_at"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
-                    <div
-                      class="MuiDataGrid-cellContent"
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                     >
                       17/01/2022
-                    </div>
+                    </p>
                   </div>
                   <div
                     aria-colindex="5"
@@ -1870,7 +1840,7 @@ exports[`CategoriesTable should render categories table with data 1`] = `
                     data-colindex="4"
                     data-field="id"
                     role="cell"
-                    style="min-width: 0; max-width: 0; min-height: 52px; max-height: 52px;"
+                    style="min-width: 0; max-width: 0; min-height: auto; max-height: none;"
                     tabindex="-1"
                   >
                     <button
@@ -2047,9 +2017,9 @@ exports[`CategoriesTable should render categories table without data 1`] = `
             <button
               aria-haspopup="menu"
               aria-label="Export"
-              aria-labelledby=":rp:"
+              aria-labelledby=":rk:"
               class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
-              id=":ro:"
+              id=":rj:"
               tabindex="0"
               type="button"
             >
@@ -2097,7 +2067,7 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
-                  id=":rq:"
+                  id=":rl:"
                   placeholder="Search…"
                   type="search"
                   value=""
@@ -2156,7 +2126,6 @@ exports[`CategoriesTable should render categories table without data 1`] = `
             >
               <div
                 aria-colindex="1"
-                aria-label="Name"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="name"
@@ -2174,13 +2143,11 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Name
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -2213,11 +2180,11 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":rt:"
+                      aria-controls=":ro:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":ru:"
+                      id=":rp:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -2258,7 +2225,6 @@ exports[`CategoriesTable should render categories table without data 1`] = `
               </div>
               <div
                 aria-colindex="2"
-                aria-label="Description"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="description"
@@ -2276,13 +2242,11 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Description
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -2315,11 +2279,11 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r10:"
+                      aria-controls=":rq:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r11:"
+                      id=":rr:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -2360,7 +2324,6 @@ exports[`CategoriesTable should render categories table without data 1`] = `
               </div>
               <div
                 aria-colindex="3"
-                aria-label="Active?"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--alignCenter MuiDataGrid-columnHeader--sortable"
                 data-field="is_active"
@@ -2378,13 +2341,11 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Active?
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -2417,11 +2378,11 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r13:"
+                      aria-controls=":rs:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r14:"
+                      id=":rt:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -2462,7 +2423,6 @@ exports[`CategoriesTable should render categories table without data 1`] = `
               </div>
               <div
                 aria-colindex="4"
-                aria-label="Created At"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="created_at"
@@ -2480,13 +2440,11 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Created At
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -2519,11 +2477,11 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r16:"
+                      aria-controls=":ru:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r17:"
+                      id=":rv:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -2564,7 +2522,6 @@ exports[`CategoriesTable should render categories table without data 1`] = `
               </div>
               <div
                 aria-colindex="5"
-                aria-label="Actions"
                 aria-sort="none"
                 class="MuiDataGrid-columnHeader MuiDataGrid-columnHeader--sortable"
                 data-field="id"
@@ -2582,13 +2539,11 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                     <div
                       class="MuiDataGrid-columnHeaderTitleContainerContent"
                     >
-                      <div
-                        aria-label=""
-                        class="MuiDataGrid-columnHeaderTitle css-1jbbcbn-MuiDataGrid-columnHeaderTitle"
-                        data-mui-internal-clone-element="true"
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 css-1pptwfq-MuiTypography-root"
                       >
                         Actions
-                      </div>
+                      </p>
                     </div>
                     <div
                       class="MuiDataGrid-iconButtonContainer css-ltf0zy-MuiDataGrid-iconButtonContainer"
@@ -2621,11 +2576,11 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r19:"
+                      aria-controls=":r10:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r1a:"
+                      id=":r11:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -2716,7 +2671,7 @@ exports[`CategoriesTable should render categories table without data 1`] = `
               />
               <p
                 class="MuiTablePagination-selectLabel css-pdct74-MuiTablePagination-selectLabel"
-                id=":rs:"
+                id=":rn:"
               >
                 Rows per page:
               </p>
@@ -2727,9 +2682,9 @@ exports[`CategoriesTable should render categories table without data 1`] = `
                 <div
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-labelledby=":rs: :rr:"
+                  aria-labelledby=":rn: :rm:"
                   class="MuiSelect-select MuiTablePagination-select MuiSelect-standard MuiInputBase-input css-194a1fa-MuiSelect-select-MuiInputBase-input"
-                  id=":rr:"
+                  id=":rm:"
                   role="button"
                   tabindex="0"
                 >

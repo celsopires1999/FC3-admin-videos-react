@@ -50,28 +50,39 @@ export function CastMembersTable({
   const columns: GridColDef[] = [
     {
       field: "name",
-      headerName: "Name",
+      renderHeader: () => renderCustomHeader("Name"),
+
       flex: 1,
       renderCell: renderNameCell,
     },
     {
       field: "type",
-      headerName: "Type",
+      renderHeader: () => renderCustomHeader("Type"),
+
       flex: 1,
       renderCell: renderTypeCell,
     },
     {
       field: "created_at",
-      headerName: "Created At",
+      renderHeader: () => renderCustomHeader("Created At"),
       flex: 1,
+      renderCell: renderCreatedAtCell,
     },
     {
       field: "id",
-      headerName: "Actions",
+      renderHeader: () => renderCustomHeader("Actions"),
       flex: 1,
       renderCell: renderActionsCell,
     },
   ];
+
+  function renderCustomHeader(header: string) {
+    return (
+      <Typography color={"primary"} fontWeight={500}>
+        {header}
+      </Typography>
+    );
+  }
 
   function renderNameCell(rowData: GridRenderCellParams) {
     return (
@@ -88,6 +99,14 @@ export function CastMembersTable({
     return (
       <Typography color="primary">
         {rowData.value === 1 ? "Director" : "Actor"}
+      </Typography>
+    );
+  }
+
+  function renderCreatedAtCell(rowData: GridRenderCellParams) {
+    return (
+      <Typography color="primary">
+        {new Date(rowData.value).toLocaleDateString("pt-BR")}
       </Typography>
     );
   }
@@ -113,7 +132,7 @@ export function CastMembersTable({
       id: castMember.id,
       name: castMember.name,
       type: castMember.type,
-      created_at: new Date(castMember.created_at).toLocaleDateString("pt-BR"),
+      created_at: castMember.created_at,
     }));
   }
 

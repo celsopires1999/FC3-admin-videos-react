@@ -4,11 +4,8 @@ import { GridFilterModel } from "@mui/x-data-grid";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  useDeleteCastMemberMutation,
-  useGetCastMembersQuery,
-} from "./CastMemberSlice";
-import { CastMembersTable } from "./components/CastMembersTable";
+import { useDeleteGenreMutation, useGetGenresQuery } from "./GenreSlice";
+import { GenresTable } from "./components/GenresTable";
 
 const initialOptions = {
   page: 1,
@@ -17,15 +14,14 @@ const initialOptions = {
   rowsPerPage: [10, 20, 30],
 };
 
-export const CastMemberList = () => {
+export const GenreList = () => {
   const [options, setOptions] = useState(initialOptions);
   const { enqueueSnackbar } = useSnackbar();
-  const { data, isFetching, error } = useGetCastMembersQuery(options);
-  const [deleteCastMember, deleteCastMemberStatus] =
-    useDeleteCastMemberMutation();
+  const { data, isFetching, error } = useGetGenresQuery(options);
+  const [deleteGenre, deleteGenreStatus] = useDeleteGenreMutation();
 
-  async function handleDeleteCastMember(id: string) {
-    await deleteCastMember({ id });
+  async function handleDeleteGenre(id: string) {
+    await deleteGenre({ id });
   }
 
   function handleOnPageChange(page: number): void {
@@ -46,20 +42,20 @@ export const CastMemberList = () => {
   }
 
   useEffect(() => {
-    if (deleteCastMemberStatus.isSuccess) {
-      enqueueSnackbar(`Cast Member deleted successfully`, {
+    if (deleteGenreStatus.isSuccess) {
+      enqueueSnackbar(`Genre deleted successfully`, {
         variant: "success",
       });
     }
-    if (deleteCastMemberStatus.error) {
-      enqueueSnackbar(`Cast Member not deleted`, {
+    if (deleteGenreStatus.error) {
+      enqueueSnackbar(`Genre not deleted`, {
         variant: "error",
       });
     }
-  }, [deleteCastMemberStatus, enqueueSnackbar]);
+  }, [deleteGenreStatus, enqueueSnackbar]);
 
   if (error) {
-    return <Typography>Error fetching cast members</Typography>;
+    return <Typography>Error fetching genres</Typography>;
   }
 
   return (
@@ -68,30 +64,30 @@ export const CastMemberList = () => {
       <Grid container>
         <Grid item xs={6}>
           <Box display="flex" justifyContent="flex-start">
-            <Typography variant="h4">Cast Members List</Typography>
+            <Typography variant="h4">Genre List</Typography>
           </Box>
         </Grid>
-        {/* New Category Button*/}
+        {/* New Genre Button*/}
         <Grid item xs={6}>
           <Box display="flex" justifyContent="flex-end">
             <Button
               variant="contained"
               color="secondary"
               component={Link}
-              to="/cast-members/create"
+              to="/genres/create"
               sx={{ mb: "1rem" }}
             >
-              New Cast Member
+              New Genre
             </Button>
           </Box>
         </Grid>
       </Grid>
-      <CastMembersTable
+      <GenresTable
         data={data}
         isFetching={isFetching}
         perPage={options.per_page}
         rowsPerPage={options.rowsPerPage}
-        handleDelete={handleDeleteCastMember}
+        handleDelete={handleDeleteGenre}
         handleOnPageChange={handleOnPageChange}
         handleFilterChange={handleFilterChange}
         handleOnPageSizeChange={handleOnPageSizeChange}

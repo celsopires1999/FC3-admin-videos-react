@@ -44,8 +44,8 @@
     "eamodio.gitlens",
     "vivaxy.vscode-conventional-commits",
     "dsznajder.es7-react-js-snippets",
-    "TabNine.tabnine-vscode",
-    "Tyriar.sort-lines"
+    "Tyriar.sort-lines",
+    "orta.vscode-jest"
   ]
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
