@@ -14,6 +14,9 @@ import { CategoryList } from "./features/categories/CategoryList";
 import { GenreCreate } from "./features/genres/GenreCreate";
 import { GenreEdit } from "./features/genres/GenreEdit";
 import { GenreList } from "./features/genres/GenreList";
+import { VideoCreate } from "./features/videos/VideoCreate";
+import { VideoEdit } from "./features/videos/VideoEdit";
+import { VideoList } from "./features/videos/VideoList";
 
 function App() {
   return (
@@ -55,6 +58,11 @@ function App() {
               <Route path="/genres" element={<GenreList />} />
               <Route path="/genres/create" element={<GenreCreate />} />
               <Route path="/genres/edit/:id" element={<GenreEdit />} />
+
+              {/* Videos */}
+              <Route path="/videos" element={<VideoList />} />
+              <Route path="/videos/create" element={<VideoCreate />} />
+              <Route path="/videos/edit/:id" element={<VideoEdit />} />
 
               <Route
                 path="*"
