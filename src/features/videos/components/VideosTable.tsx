@@ -1,5 +1,5 @@
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Chip, IconButton, Typography } from "@mui/material";
+import { Chip, IconButton, Tooltip, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import {
   DataGrid,
@@ -28,7 +28,8 @@ type Props = {
 interface GridRowsProps {
   id: string;
   title: string;
-  opened: boolean;
+  genres?: Genre[];
+  categories?: Category[];
   created_at: string;
 }
 
@@ -54,40 +55,33 @@ export function VideosTable({
       field: "title",
       renderHeader: () => renderCustomHeader("Title"),
 
-      flex: 25,
+      flex: 2.5,
       renderCell: renderTitleCell,
     },
     {
       field: "genres",
       renderHeader: () => renderCustomHeader("Genres"),
 
-      flex: 22,
+      flex: 3,
       renderCell: renderGenresCell,
     },
     {
       field: "categories",
       renderHeader: () => renderCustomHeader("Categories"),
 
-      flex: 23,
+      flex: 3,
       renderCell: renderCategoriesCell,
-    },
-    {
-      field: "opened",
-      renderHeader: () => renderCustomHeader("Opened"),
-
-      flex: 10,
-      renderCell: renderOpenedCell,
     },
     {
       field: "created_at",
       renderHeader: () => renderCustomHeader("Created At"),
-      flex: 10,
+      flex: 1,
       renderCell: renderCreatedAtCell,
     },
     {
       field: "id",
       renderHeader: () => renderCustomHeader("Actions"),
-      flex: 10,
+      flex: 1,
       renderCell: renderActionsCell,
     },
   ];
@@ -113,55 +107,79 @@ export function VideosTable({
 
   function renderGenresCell(rowData: GridRenderCellParams<Genre[]>) {
     const genres = rowData.value ?? [];
+    const twoFirstGenres = genres.slice(0, 2);
+    const remainingGenres = genres.length - twoFirstGenres.length;
     return (
       <Box
         sx={{
           display: "inline",
         }}
       >
-        {genres.map((g) => (
+        {twoFirstGenres.map((g) => (
           <Chip
             key={g.id}
             label={g.name}
             sx={{
+              fontSize: "0.7rem",
               marginRight: "0.4rem",
               marginTop: "0.2rem",
               marginBottom: "0.2rem",
             }}
           />
         ))}
+        {remainingGenres > 0 && (
+          <Tooltip title={genres.map((g) => g.name).join(", ")}>
+            <Chip
+              label={`+${remainingGenres}`}
+              sx={{
+                fontSize: "0.7rem",
+                marginRight: "0.4rem",
+                marginTop: "0.2rem",
+                marginBottom: "0.2rem",
+              }}
+            />
+          </Tooltip>
+        )}
       </Box>
     );
   }
 
   function renderCategoriesCell(rowData: GridRenderCellParams<Category[]>) {
     const categories = rowData.value ?? [];
+    const twoFirstCategories = categories.slice(0, 2);
+    const remainingCategories = categories.length - twoFirstCategories.length;
     return (
       <Box
         sx={{
           display: "inline",
         }}
       >
-        {categories.map((c) => (
+        {twoFirstCategories.map((c) => (
           <Chip
             key={c.id}
             label={c.name}
             sx={{
+              fontSize: "0.7rem",
               marginRight: "0.4rem",
               marginTop: "0.2rem",
               marginBottom: "0.2rem",
             }}
           />
         ))}
+        {remainingCategories > 0 && (
+          <Tooltip title={categories.map((c) => c.name).join(", ")}>
+            <Chip
+              label={`+${remainingCategories}`}
+              sx={{
+                fontSize: "0.7rem",
+                marginRight: "0.4rem",
+                marginTop: "0.2rem",
+                marginBottom: "0.2rem",
+              }}
+            />
+          </Tooltip>
+        )}
       </Box>
-    );
-  }
-
-  function renderOpenedCell(rowData: GridRenderCellParams) {
-    return (
-      <Typography color="primary">
-        {rowData.value === true ? "Yes" : "No"}
-      </Typography>
     );
   }
 
@@ -193,7 +211,6 @@ export function VideosTable({
     return videos.map((video) => ({
       id: video.id,
       title: video.title,
-      opened: video.opened,
       genres: video.genres,
       categories: video.categories,
       created_at: video.created_at,

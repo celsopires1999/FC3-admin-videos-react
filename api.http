@@ -1,21 +1,24 @@
-###
+##################
+### Categories ###
+##################
+
+### List ###
 GET http://host.docker.internal:8000/api/categories
 Content-Type: application/json
-###
 
+### List all ###
 GET http://host.docker.internal:8000/api/categories?all=true
 Content-Type: application/json
 
-###
+### List a page ###
 GET http://host.docker.internal:8000/api/categories?page=2&per_page=15
 Content-Type: application/json
 
-###
-
+### get a category ###
 GET http://host.docker.internal:8000/api/categories/06fe24ca-71cc-4d55-9a64-82f953501b34
 Content-Type: application/json
 
-###
+### create a category ###
 POST http://host.docker.internal:8000/api/categories
 Content-Type: application/json
 
@@ -23,7 +26,7 @@ Content-Type: application/json
     "name": "Docker"
 }
 
-###
+### update a category ###
 PUT http://host.docker.internal:8000/api/categories/01ffe654-6cdd-4df8-a841-eebed0061994
 Content-Type: application/json
 
@@ -32,13 +35,13 @@ Content-Type: application/json
     "description": "Docker"
 }
 
-###
+### delete a category ###
 DELETE http://host.docker.internal:8000/api/categories/66fc7465-f62d-425a-8f62-e79fc5570245
 Content-Type: application/json
 
-###
-###
-###
+####################
+### cast members ###
+####################
 POST http://host.docker.internal:8000/api/cast_members
 Content-Type: application/json
 
@@ -55,7 +58,9 @@ Content-Type: application/json
 GET http://host.docker.internal:8000/api/cast_members/01a20423-248f-48a4-82d6-6b17a11961b8
 Content-Type: application/json
 
-###
+##############
+### genres ###
+##############
 GET http://host.docker.internal:8000/api/genres
 Content-Type: application/json
 
@@ -77,5 +82,48 @@ Content-Type: application/json
 
 DELETE http://host.docker.internal:8000/api/genres/8048874c-7d8a-4f79-af29-07079aaee000
 Content-Type: application/json
+
+##############
+### videos ###
+##############
+
+### List ###
+GET http://host.docker.internal:8000/api/videos
+Content-Type: application/json
+
+### get a video ###
+GET http://host.docker.internal:8000/api/videos/9f887fdd-e515-4498-90e4-b7694d7798c1
+Content-Type: application/json
+
+### create a video ###
+POST http://host.docker.internal:8000/api/videos
+Content-Type: application/json
+
+{
+    "title": "De Volta para o Futuro",
+    "description": "Marty McFly, um adolescente de uma pequena cidade californiana, é transportado para a década de 1950 quando a experiência do excêntrico cientista Doc Brown dá errado. Viajando no tempo em um carro modificado, Marty conhece versões jovens de seus pais e precisa fazer com que eles se apaixonem, ou então ele deixará de existir. Para complicar, Marty precisa voltar para casa a tempo de salvar o cientista. ",
+    "year_launched": 1985,
+    "opened": true,
+    "rating": "10",
+    "duration": 90,
+    "genres_id": ["12b2a2cd-ab59-4791-a91a-079ca64ff789"],
+    "categories_id": ["312a8041-4ea1-4a14-bdc7-3e1be9b16b07"],
+    "cast_members_id": ["1d830f84-ec74-4456-a672-816ba5abfc0d"]
+}
+
+
+### create a video with error ###
+POST http://host.docker.internal:8000/api/videos
+Content-Type: application/json
+
+{
+    "title": "title",
+    "description": "description",
+    "year_launched": 2010,
+    "rating": "L",
+    "duration": 90,
+    "categories_id": ["fe99efc5-a6fc-4e57-98da-d4a78167dce1"],
+    "genres_id": ["fc9e230d-e205-4753-bb07-6355e3edcf86"]
+}
 
 ###
