@@ -1,5 +1,5 @@
 import DeleteIcon from "@mui/icons-material/Delete";
-import { IconButton, Typography } from "@mui/material";
+import { Chip, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import {
   DataGrid,
@@ -9,6 +9,8 @@ import {
   GridToolbar,
 } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
+import { Category } from "../../../types/Category";
+import { Genre } from "../../../types/Genre";
 import { Results } from "../../../types/Video";
 
 type Props = {
@@ -52,26 +54,40 @@ export function VideosTable({
       field: "title",
       renderHeader: () => renderCustomHeader("Title"),
 
-      flex: 1,
+      flex: 25,
       renderCell: renderTitleCell,
+    },
+    {
+      field: "genres",
+      renderHeader: () => renderCustomHeader("Genres"),
+
+      flex: 22,
+      renderCell: renderGenresCell,
+    },
+    {
+      field: "categories",
+      renderHeader: () => renderCustomHeader("Categories"),
+
+      flex: 23,
+      renderCell: renderCategoriesCell,
     },
     {
       field: "opened",
       renderHeader: () => renderCustomHeader("Opened"),
 
-      flex: 1,
+      flex: 10,
       renderCell: renderOpenedCell,
     },
     {
       field: "created_at",
       renderHeader: () => renderCustomHeader("Created At"),
-      flex: 1,
+      flex: 10,
       renderCell: renderCreatedAtCell,
     },
     {
       field: "id",
       renderHeader: () => renderCustomHeader("Actions"),
-      flex: 1,
+      flex: 10,
       renderCell: renderActionsCell,
     },
   ];
@@ -92,6 +108,52 @@ export function VideosTable({
       >
         <Typography color={"primary"}>{rowData.value}</Typography>
       </Link>
+    );
+  }
+
+  function renderGenresCell(rowData: GridRenderCellParams<Genre[]>) {
+    const genres = rowData.value ?? [];
+    return (
+      <Box
+        sx={{
+          display: "inline",
+        }}
+      >
+        {genres.map((g) => (
+          <Chip
+            key={g.id}
+            label={g.name}
+            sx={{
+              marginRight: "0.4rem",
+              marginTop: "0.2rem",
+              marginBottom: "0.2rem",
+            }}
+          />
+        ))}
+      </Box>
+    );
+  }
+
+  function renderCategoriesCell(rowData: GridRenderCellParams<Category[]>) {
+    const categories = rowData.value ?? [];
+    return (
+      <Box
+        sx={{
+          display: "inline",
+        }}
+      >
+        {categories.map((c) => (
+          <Chip
+            key={c.id}
+            label={c.name}
+            sx={{
+              marginRight: "0.4rem",
+              marginTop: "0.2rem",
+              marginBottom: "0.2rem",
+            }}
+          />
+        ))}
+      </Box>
     );
   }
 
@@ -132,6 +194,8 @@ export function VideosTable({
       id: video.id,
       title: video.title,
       opened: video.opened,
+      genres: video.genres,
+      categories: video.categories,
       created_at: video.created_at,
     }));
   }
