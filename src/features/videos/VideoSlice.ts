@@ -1,5 +1,12 @@
-import { Video, VideoParams, Result, Results } from "../../types/Video";
+import {
+  Video,
+  VideoParams,
+  Result,
+  Results,
+  VideoPayload,
+} from "../../types/Video";
 import { apiSlice } from "../api/apiSlice";
+import { Results as CategoryResults } from "../../types/Category";
 
 const endpointUrl = "/videos";
 
@@ -51,15 +58,15 @@ function getVideo({ id }: { id: string }) {
   };
 }
 
-function createVideo(video: Video) {
-  return { url: endpointUrl, method: "POST", body: video };
+function createVideo(videoPayload: VideoPayload) {
+  return { url: endpointUrl, method: "POST", body: videoPayload };
 }
 
-function updateVideo(video: Video) {
+function updateVideo(videoPayload: VideoPayload) {
   return {
-    url: `${endpointUrl}/${video.id}`,
+    url: `${endpointUrl}/${videoPayload.id}`,
     method: "PUT",
-    body: video,
+    body: videoPayload,
   };
 }
 
@@ -70,8 +77,15 @@ function deleteVideo({ id }: { id: string }) {
   };
 }
 
+function getCategoriesForVideo() {
+  return `/categories?all=true`;
+}
+
 export const videosApiSlice = apiSlice.injectEndpoints({
   endpoints: ({ query, mutation }) => ({
+    getCategoriesForVideo: query<CategoryResults, void>({
+      query: getCategoriesForVideo,
+    }),
     getVideos: query<Results, VideoParams>({
       query: getVideos,
       providesTags: ["Videos"],
@@ -80,11 +94,11 @@ export const videosApiSlice = apiSlice.injectEndpoints({
       query: getVideo,
       providesTags: ["Videos"],
     }),
-    createVideo: mutation<Result, Video>({
+    createVideo: mutation<Result, VideoPayload>({
       query: createVideo,
       invalidatesTags: ["Videos"],
     }),
-    updateVideo: mutation<Result, Video>({
+    updateVideo: mutation<Result, VideoPayload>({
       query: updateVideo,
       invalidatesTags: ["Videos"],
     }),
@@ -101,4 +115,5 @@ export const {
   useCreateVideoMutation,
   useUpdateVideoMutation,
   useDeleteVideoMutation,
+  useGetCategoriesForVideoQuery,
 } = videosApiSlice;

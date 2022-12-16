@@ -67,4 +67,8 @@ export interface VideoPayload {
   categories_id?: string[];
   genres_id?: string[];
   cast_members_id?: string[];
+  thumb_file_URL: string;
+  banner_file_URL: string;
+  trailer_file_URL: string;
+  video_file_URL: string;
 }
