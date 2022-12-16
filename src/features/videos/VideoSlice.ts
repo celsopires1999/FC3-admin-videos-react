@@ -7,6 +7,8 @@ import {
 } from "../../types/Video";
 import { apiSlice } from "../api/apiSlice";
 import { Results as CategoryResults } from "../../types/Category";
+import { Results as GenreResults } from "../../types/Genre";
+import { Results as CastMemberResults } from "../../types/CastMember";
 
 const endpointUrl = "/videos";
 
@@ -59,13 +61,23 @@ function getVideo({ id }: { id: string }) {
 }
 
 function createVideo(videoPayload: VideoPayload) {
-  return { url: endpointUrl, method: "POST", body: videoPayload };
+  return {
+    url: endpointUrl,
+    method: "POST",
+    headers: {
+      accept: "application/json",
+    },
+    body: videoPayload,
+  };
 }
 
 function updateVideo(videoPayload: VideoPayload) {
   return {
     url: `${endpointUrl}/${videoPayload.id}`,
     method: "PUT",
+    headers: {
+      accept: "application/json",
+    },
     body: videoPayload,
   };
 }
@@ -77,14 +89,31 @@ function deleteVideo({ id }: { id: string }) {
   };
 }
 
-function getCategoriesForVideo() {
+function getAllCategories() {
   return `/categories?all=true`;
+}
+
+function getAllGenres() {
+  return `/genres?all=true`;
+}
+
+function getAllCastMembers() {
+  return `/cast_members?all=true`;
 }
 
 export const videosApiSlice = apiSlice.injectEndpoints({
   endpoints: ({ query, mutation }) => ({
-    getCategoriesForVideo: query<CategoryResults, void>({
-      query: getCategoriesForVideo,
+    getAllCategories: query<CategoryResults, void>({
+      query: getAllCategories,
+      providesTags: ["Categories"],
+    }),
+    getAllGenres: query<GenreResults, void>({
+      query: getAllGenres,
+      providesTags: ["Genres"],
+    }),
+    getAllCastMembers: query<CastMemberResults, void>({
+      query: getAllCastMembers,
+      providesTags: ["CastMembers"],
     }),
     getVideos: query<Results, VideoParams>({
       query: getVideos,
@@ -115,5 +144,7 @@ export const {
   useCreateVideoMutation,
   useUpdateVideoMutation,
   useDeleteVideoMutation,
-  useGetCategoriesForVideoQuery,
+  useGetAllCategoriesQuery,
+  useGetAllGenresQuery,
+  useGetAllCastMembersQuery,
 } = videosApiSlice;

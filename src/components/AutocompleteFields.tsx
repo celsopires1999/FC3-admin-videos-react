@@ -7,62 +7,66 @@ import { CastMember } from "../types/CastMember";
 import { Category } from "../types/Category";
 import { Genre } from "../types/Genre";
 
-type Entities = Category | Genre | CastMember;
+type Entity = Category | Genre | CastMember;
 
 type Props = {
   name: string;
   label: string;
-  options?: Entities[];
-  value: Entities[];
-  isDisabled: boolean;
+  value: Entity[];
   isLoading: boolean;
-  handleChange: (value: any) => void;
+  isDisabled: boolean;
+  options?: Entity[];
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const AutocompleteFields = ({
-  name,
-  label,
-  options,
   value,
-  isDisabled,
   isLoading,
+  isDisabled,
+  options,
+  label,
+  name,
   handleChange,
 }: Props) => {
-  const renderOptions = (
+  const getOptionsLabel = (option: Entity): string => option.name;
+
+  const isOptionEqualToValue = (option: Entity, value: Entity): boolean =>
+    option.id === value.id;
+
+  const renderOption = (
     props: React.HTMLAttributes<HTMLLIElement>,
-    option: Entities
+    option: Entity
   ) => (
     <li {...props} key={option.id}>
       {option.name}
     </li>
   );
 
-  const isIdEqual = (option: Entities, value: Entities): boolean =>
-    option.id === value.id;
+  const renderInput = (params: AutocompleteRenderInputParams) => (
+    <TextField {...params} label={label} data-testid={`${name}-input`} />
+  );
 
-  const handleOnChange = (_e: React.ChangeEvent<{}>, value: Entities[]) => {
+  const handleOnChange = (
+    _event: React.SyntheticEvent<Element, Event>,
+    value: Entity[]
+  ) => {
     handleChange({
       target: { name, value },
     } as any);
   };
 
-  const renderInput = (params: AutocompleteRenderInputParams) => (
-    <TextField {...params} label={label} data-testid={`${name}-input`} />
-  );
-
   return (
     <Autocomplete
       multiple
       value={value}
-      options={options || []}
       loading={isLoading}
       filterSelectedOptions
-      renderInput={renderInput}
+      options={options ?? []}
       onChange={handleOnChange}
-      renderOption={renderOptions}
-      data-testid={`${name}-search`}
-      isOptionEqualToValue={isIdEqual}
-      getOptionLabel={(option) => option.name}
+      renderInput={renderInput}
+      renderOption={renderOption}
+      getOptionLabel={getOptionsLabel}
+      isOptionEqualToValue={isOptionEqualToValue}
       disabled={isDisabled || isLoading || !options}
     />
   );

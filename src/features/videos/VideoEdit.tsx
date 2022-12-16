@@ -6,7 +6,9 @@ import { Video } from "../../types/Video";
 import { VideoForm } from "./components/VideoForm";
 import {
   initialState as videoInitialState,
-  useGetCategoriesForVideoQuery,
+  useGetAllCategoriesQuery,
+  useGetAllGenresQuery,
+  useGetAllCastMembersQuery,
   useGetVideoQuery,
   useUpdateVideoMutation,
 } from "./VideoSlice";
@@ -15,7 +17,9 @@ import { mapVideoPayload } from "./utils";
 export const VideoEdit = () => {
   const id = useParams().id ?? "";
   const { data: video, isFetching } = useGetVideoQuery({ id });
-  const { data: categories } = useGetCategoriesForVideoQuery();
+  const { data: categories } = useGetAllCategoriesQuery();
+  const { data: genres } = useGetAllGenresQuery();
+  const { data: cast_members } = useGetAllCastMembersQuery();
   const [updateVideo, status] = useUpdateVideoMutation();
   const [videoState, setVideoState] = useState<Video>(videoInitialState);
 
@@ -44,6 +48,7 @@ export const VideoEdit = () => {
       });
     }
     if (status.error) {
+      console.error(status.error);
       enqueueSnackbar(`Video not updated`, { variant: "error" });
     }
   }, [enqueueSnackbar, status.error, status.isSuccess]);
@@ -58,9 +63,9 @@ export const VideoEdit = () => {
         </Box>
         <VideoForm
           video={videoState}
-          genres={undefined}
+          genres={genres?.data}
           categories={categories?.data}
-          cast_members={undefined}
+          cast_members={cast_members?.data}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           isLoading={isFetching || status.isLoading}

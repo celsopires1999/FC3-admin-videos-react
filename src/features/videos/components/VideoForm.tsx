@@ -1,12 +1,17 @@
-import { Box, Button, FormControl, Grid, TextField } from "@mui/material";
-import React from "react";
+import {
+  Box,
+  Button,
+  FormControl,
+  Grid,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { AutocompleteFields } from "../../../components/AutocompleteFields";
 import { CastMember } from "../../../types/CastMember";
 import { Category } from "../../../types/Category";
 import { Genre } from "../../../types/Genre";
 import { Video } from "../../../types/Video";
-
 export type Props = {
   video: Video;
   genres?: Genre[];
@@ -17,7 +22,6 @@ export type Props = {
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
-
 export const VideoForm = ({
   video,
   genres,
@@ -95,49 +99,54 @@ export const VideoForm = ({
                   />
                 </FormControl>
               </Grid>
+
+              {/* Categories  */}
+              <Grid item xs={12}>
+                <AutocompleteFields
+                  name={"categories"}
+                  options={categories}
+                  label={"Categories"}
+                  isLoading={isLoading}
+                  isDisabled={isDisabled}
+                  handleChange={handleChange}
+                  value={video.categories ?? []}
+                />
+              </Grid>
+              {/* Genres  */}
+              <Grid item xs={12}>
+                <AutocompleteFields
+                  name={"genres"}
+                  options={genres}
+                  label={"Genres"}
+                  isLoading={isLoading}
+                  isDisabled={isDisabled}
+                  handleChange={handleChange}
+                  value={video.genres ?? []}
+                />
+              </Grid>
+              {/* Cast Members  */}
+              <Grid item xs={12}>
+                <AutocompleteFields
+                  name={"cast_members"}
+                  options={cast_members}
+                  label={"Cast Members"}
+                  isLoading={isLoading}
+                  isDisabled={isDisabled}
+                  handleChange={handleChange}
+                  value={video.cast_members ?? []}
+                />
+              </Grid>
             </Grid>
           </Grid>
-
           {/* Right Panel */}
           <Grid container item spacing={3} xs={12} md={6}>
-            {/* Categories  */}
+            {/* Typrography */}
             <Grid item xs={12}>
-              <AutocompleteFields
-                name="categories"
-                label="Categories"
-                isLoading={isLoading}
-                isDisabled={isDisabled}
-                options={categories}
-                handleChange={handleChange}
-                value={video.categories || []}
-              />
-            </Grid>
-            {/* Genres  */}
-            <Grid item xs={12}>
-              <AutocompleteFields
-                name="genres"
-                label="Genres"
-                isLoading={isLoading}
-                isDisabled={isDisabled}
-                options={genres}
-                handleChange={handleChange}
-                value={video.genres || []}
-              />
-            </Grid>
-            {/* Cast Members  */}
-            <Grid item xs={12}>
-              <AutocompleteFields
-                name="cast_members"
-                label="Cast Members"
-                isLoading={isLoading}
-                isDisabled={isDisabled}
-                options={cast_members}
-                handleChange={handleChange}
-                value={video.cast_members || []}
-              />
+              <Typography variant="h2" component="h1">
+                Right panel
+              </Typography>
             </Grid>
           </Grid>
-
           {/* Buttons */}
           <Grid container item xs={12}>
             <Box display="flex" gap={2}>

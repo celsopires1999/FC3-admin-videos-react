@@ -127,3 +127,28 @@ Content-Type: application/json
 }
 
 ###
+
+PUT http://host.docker.internal:8000/api/videos/f0222baa-430d-4d21-b614-757de0a122f5
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": "f0222baa-430d-4d21-b614-757de0a122f5",
+    "title": "De Volta para o Futuro",
+    "description": "Marty McFly, um adolescente de uma pequena cidade californiana, é transportado para a década de 1950 quando a experiência do excêntrico cientista Doc Brown dá errado. Viajando no tempo em um carro modificado, Marty conhece versões jovens de seus pais e precisa fazer com que eles se apaixonem, ou então ele deixará de existir. Para complicar, Marty precisa voltar para casa a tempo de salvar o cientista.",
+    "year_launched": 1985,
+    "opened": true,
+    "rating": "10",
+    "duration": 90,
+    "genres_id": [
+        "12b2a2cd-ab59-4791-a91a-079ca64ff789"
+    ],
+    "categories_id": [
+        "312a8041-4ea1-4a14-bdc7-3e1be9b16b07",
+        "18c7f8bf-a626-4b36-867f-6fb957aab558"
+    ],
+    "cast_members_id": [
+        "01a20423-248f-48a4-82d6-6b17a11961b8",
+        "1d830f84-ec74-4456-a672-816ba5abfc0d"
+    ]
+}
