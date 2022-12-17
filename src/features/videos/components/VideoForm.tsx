@@ -2,16 +2,19 @@ import {
   Box,
   Button,
   FormControl,
+  FormLabel,
   Grid,
+  RadioGroup,
   TextField,
-  Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { AutocompleteFields } from "../../../components/AutocompleteFields";
+import { RatingsList } from "../../../components/RatingsList";
 import { CastMember } from "../../../types/CastMember";
 import { Category } from "../../../types/Category";
 import { Genre } from "../../../types/Genre";
 import { Video } from "../../../types/Video";
+
 export type Props = {
   video: Video;
   genres?: Genre[];
@@ -140,11 +143,19 @@ export const VideoForm = ({
           </Grid>
           {/* Right Panel */}
           <Grid container item spacing={3} xs={12} md={6}>
-            {/* Typrography */}
+            {/* Rating */}
             <Grid item xs={12}>
-              <Typography variant="h2" component="h1">
-                Right panel
-              </Typography>
+              <FormControl>
+                <FormLabel component="legend">Rating</FormLabel>
+                <RadioGroup
+                  row
+                  name="rating"
+                  value={video.rating}
+                  onChange={handleChange}
+                >
+                  <RatingsList isDisabled={isDisabled} />
+                </RadioGroup>
+              </FormControl>
             </Grid>
           </Grid>
           {/* Buttons */}
