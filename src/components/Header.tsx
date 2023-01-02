@@ -8,11 +8,11 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export function Header() {
+export function Header({ toggle }: { toggle: () => void }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar position="static" color="inherit">
+        <Toolbar color="inherit">
           <IconButton
             size="large"
             edge="start"
@@ -25,6 +25,9 @@ export function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Codeflix
           </Typography>
+          <Button color="inherit" onClick={toggle}>
+            Toggle theme
+          </Button>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>

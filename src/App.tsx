@@ -1,10 +1,11 @@
 import { CssBaseline, Typography } from "@mui/material";
 import { Box, ThemeProvider } from "@mui/system";
 import { SnackbarProvider } from "notistack";
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Layout } from "./components/Layout";
-import { appTheme } from "./config/theme";
+import { darkTheme, lightTheme } from "./config/theme";
 import { CastMemberCreate } from "./features/cast-members/CastMemberCreate";
 import { CastMemberEdit } from "./features/cast-members/CastMemberEdit";
 import { CastMemberList } from "./features/cast-members/CastMemberList";
@@ -19,15 +20,21 @@ import { VideoEdit } from "./features/videos/VideoEdit";
 import { VideoList } from "./features/videos/VideoList";
 
 function App() {
+  const [theme, setTheme] = useState(darkTheme);
+
+  const toggle = () => {
+    theme.palette.mode === "dark" ? setTheme(lightTheme) : setTheme(darkTheme);
+  };
+
   return (
-    <ThemeProvider theme={appTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <SnackbarProvider
         autoHideDuration={2000}
         maxSnack={3}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
       >
-        <Header />
+        <Header toggle={toggle} />
         <Layout>
           <Routes>
             <Route path="/" element={<CategoryList />} />
