@@ -1,11 +1,9 @@
 import { CssBaseline, Typography } from "@mui/material";
 import { Box, ThemeProvider } from "@mui/system";
 import { SnackbarProvider } from "notistack";
-import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Layout } from "./components/Layout";
-import { darkTheme, lightTheme } from "./config/theme";
 import { CastMemberCreate } from "./features/cast-members/CastMemberCreate";
 import { CastMemberEdit } from "./features/cast-members/CastMemberEdit";
 import { CastMemberList } from "./features/cast-members/CastMemberList";
@@ -18,23 +16,20 @@ import { GenreList } from "./features/genres/GenreList";
 import { VideoCreate } from "./features/videos/VideoCreate";
 import { VideoEdit } from "./features/videos/VideoEdit";
 import { VideoList } from "./features/videos/VideoList";
+import { useAppTheme } from "./hooks/useAppTheme";
 
 function App() {
-  const [theme, setTheme] = useState(darkTheme);
-
-  const toggle = () => {
-    theme.palette.mode === "dark" ? setTheme(lightTheme) : setTheme(darkTheme);
-  };
+  const [currentTheme, toggleCurrentTheme] = useAppTheme();
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={currentTheme}>
       <CssBaseline />
       <SnackbarProvider
         autoHideDuration={2000}
         maxSnack={3}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
       >
-        <Header toggle={toggle} />
+        <Header mode={currentTheme.palette.mode} toggle={toggleCurrentTheme} />
         <Layout>
           <Routes>
             <Route path="/" element={<CategoryList />} />
