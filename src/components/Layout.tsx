@@ -1,18 +1,51 @@
-import { Box, Container } from "@mui/system";
-import React from "react";
+import { ThemeProvider } from "@emotion/react";
+import { AppBar, Box, CssBaseline } from "@mui/material";
+import { Container } from "@mui/system";
+import { SnackbarProvider } from "notistack";
+import React, { useState } from "react";
+import { useAppTheme } from "../hooks/useAppTheme";
+import { Header } from "./Header";
+import { ResponsiveDrawer } from "./ResponsiveDrawer";
+
+const drawerWidth = 240;
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [currentTheme, toggleCurrentTheme] = useAppTheme();
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
   return (
-    <Box>
-      <Container
-        maxWidth="lg"
-        sx={{
-          mt: 4,
-          mb: 4,
-        }}
-      >
-        {children}
-      </Container>
-    </Box>
+    <ThemeProvider theme={currentTheme}>
+      <CssBaseline />
+      <Box sx={{ display: "flex" }}>
+        <AppBar
+          position="fixed"
+          color="inherit"
+          sx={{
+            width: { sm: `calc(100% - ${drawerWidth}px)` },
+            ml: { sm: `${drawerWidth}px` },
+          }}
+        >
+          <Header
+            handleDrawerToggle={handleDrawerToggle}
+            toggle={toggleCurrentTheme}
+            mode={currentTheme.palette.mode === "dark" ? "dark" : "light"}
+          />
+        </AppBar>
+        <ResponsiveDrawer open={mobileOpen} onClose={handleDrawerToggle} />
+        <SnackbarProvider
+          autoHideDuration={2000}
+          maxSnack={3}
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        >
+          <Container maxWidth="lg" sx={{ color: "inherit", my: 12 }}>
+            {children}
+          </Container>
+        </SnackbarProvider>
+      </Box>
+    </ThemeProvider>
   );
 }
