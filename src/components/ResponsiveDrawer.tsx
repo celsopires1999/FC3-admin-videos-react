@@ -4,9 +4,12 @@ import {
   Drawer,
   List,
   ListItem,
+  ListItemButton,
+  ListItemText,
   Toolbar,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 const drawerWidth = 240;
 
 type Props = {
@@ -40,15 +43,23 @@ export function ResponsiveDrawer({ open, onClose }: Props) {
         <Typography variant="h6" noWrap component="div">
           Codeflix
         </Typography>
-        <Divider />
-        <List>
-          {routes.map((route, index) => (
-            <ListItem key={index} disablePadding>
-              <Typography>{route.name}</Typography>
-            </ListItem>
-          ))}
-        </List>
       </Toolbar>
+      <Divider />
+      <List>
+        {routes.map((route, index) => (
+          <Link
+            key={index}
+            to={route.path}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <ListItem key={index} disablePadding>
+              <ListItemButton>
+                <ListItemText>{route.name}</ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        ))}
+      </List>
     </div>
   );
   return (
