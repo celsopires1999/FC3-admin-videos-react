@@ -1,22 +1,22 @@
 import { Box, Paper, Typography } from "@mui/material";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
+import { Category } from "../../types/Category";
 import { Video } from "../../types/Video";
 import { VideoForm } from "./components/VideoForm";
+import { mapVideoPayload } from "./utils";
 import {
   initialState as videoInitialState,
   useCreateVideoMutation,
-  useGetAllCategoriesQuery,
   useGetAllCastMembersQuery,
   useGetAllGenresQuery,
 } from "./VideoSlice";
-import { mapVideoPayload } from "./utils";
 
 export const VideoCreate = () => {
   const { enqueueSnackbar } = useSnackbar();
   const [createVideo, status] = useCreateVideoMutation();
   const [videoState, setVideoState] = useState<Video>(videoInitialState);
-  const { data: categories } = useGetAllCategoriesQuery();
+  const [categories, setCategories] = useState<Category[] | undefined>([]);
   const { data: genres } = useGetAllGenresQuery();
   const { data: cast_members } = useGetAllCastMembersQuery();
 
@@ -42,6 +42,16 @@ export const VideoCreate = () => {
     }
   }, [enqueueSnackbar, status.error, status.isSuccess]);
 
+  useEffect(() => {
+    const categories = videoState.genres
+      ?.flatMap(({ categories }) => categories)
+      .filter((category, index, self) => {
+        return self.findIndex((c) => c?.id === category.id) === index;
+      });
+
+    setCategories(categories);
+  }, [videoState.genres]);
+
   return (
     <Box>
       <Paper>
@@ -54,7 +64,7 @@ export const VideoCreate = () => {
         <VideoForm
           video={videoState}
           genres={genres?.data}
-          categories={categories?.data}
+          categories={categories}
           cast_members={cast_members?.data}
           handleSubmit={handleSubmit}
           handleChange={handleChange}

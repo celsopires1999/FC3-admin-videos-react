@@ -103,30 +103,6 @@ export const VideoForm = ({
                 </FormControl>
               </Grid>
 
-              {/* Categories  */}
-              <Grid item xs={12}>
-                <AutocompleteFields
-                  name={"categories"}
-                  options={categories}
-                  label={"Categories"}
-                  isLoading={isLoading}
-                  isDisabled={isDisabled}
-                  handleChange={handleChange}
-                  value={video.categories ?? []}
-                />
-              </Grid>
-              {/* Genres  */}
-              <Grid item xs={12}>
-                <AutocompleteFields
-                  name={"genres"}
-                  options={genres}
-                  label={"Genres"}
-                  isLoading={isLoading}
-                  isDisabled={isDisabled}
-                  handleChange={handleChange}
-                  value={video.genres ?? []}
-                />
-              </Grid>
               {/* Cast Members  */}
               <Grid item xs={12}>
                 <AutocompleteFields
@@ -138,6 +114,34 @@ export const VideoForm = ({
                   handleChange={handleChange}
                   value={video.cast_members ?? []}
                 />
+              </Grid>
+
+              <Grid container item spacing={3} xs={12} md={12}>
+                {/* Genres  */}
+                <Grid item xs={6} md={6}>
+                  <AutocompleteFields
+                    name={"genres"}
+                    options={genres}
+                    label={"Genres"}
+                    isLoading={isLoading}
+                    isDisabled={isDisabled}
+                    handleChange={handleChange}
+                    value={video.genres ?? []}
+                  />
+                </Grid>
+
+                {/* Categories  */}
+                <Grid item xs={6} md={6}>
+                  <AutocompleteFields
+                    name={"categories"}
+                    options={categories}
+                    label={"Categories"}
+                    isLoading={isLoading}
+                    isDisabled={isDisabled}
+                    handleChange={handleChange}
+                    value={video.categories ?? []}
+                  />
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
