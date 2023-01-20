@@ -1,7 +1,7 @@
 import { Box, Paper, Typography } from "@mui/material";
 import { useSnackbar } from "notistack";
-import { useEffect, useRef, useState } from "react";
-import { Category } from "../../types/Category";
+import { useEffect, useState } from "react";
+import { useUniqueCategories } from "../../hooks/useUniqueCategories";
 import { Video } from "../../types/Video";
 import { VideoForm } from "./components/VideoForm";
 import { mapVideoPayload } from "./utils";
@@ -16,8 +16,7 @@ export const VideoCreate = () => {
   const { enqueueSnackbar } = useSnackbar();
   const [createVideo, status] = useCreateVideoMutation();
   const [videoState, setVideoState] = useState<Video>(videoInitialState);
-  const [uniqueCategories, setUniqueCategories] = useState<Category[]>([]);
-  const categoriesToKeep = useRef<Category[] | undefined>(undefined);
+  const [categories] = useUniqueCategories(videoState, setVideoState);
   const { data: genres } = useGetAllGenresQuery();
   const { data: cast_members } = useGetAllCastMembersQuery();
 
@@ -43,35 +42,6 @@ export const VideoCreate = () => {
     }
   }, [enqueueSnackbar, status.error, status.isSuccess]);
 
-  useEffect(() => {
-    const uniqueCategories = videoState.genres
-      ?.flatMap(({ categories }) => categories)
-      .filter(filterById) as Category[];
-
-    setUniqueCategories(uniqueCategories);
-  }, [videoState.genres]);
-
-  function filterById(
-    category: Category | undefined,
-    index: number,
-    self: (Category | undefined)[]
-  ): boolean {
-    return index === self.findIndex((c) => c?.id === category?.id);
-  }
-
-  useEffect(() => {
-    categoriesToKeep.current = videoState.categories?.filter((category) =>
-      uniqueCategories.find((c) => c?.id === category.id)
-    );
-  }, [uniqueCategories, videoState.categories]);
-
-  useEffect(() => {
-    setVideoState((state: Video) => ({
-      ...state,
-      categories: categoriesToKeep.current,
-    }));
-  }, [uniqueCategories]);
-
   return (
     <Box>
       <Paper>
@@ -84,7 +54,7 @@ export const VideoCreate = () => {
         <VideoForm
           video={videoState}
           genres={genres?.data}
-          categories={uniqueCategories}
+          categories={categories}
           cast_members={cast_members?.data}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
