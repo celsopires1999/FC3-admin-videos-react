@@ -16,6 +16,7 @@ export const VideoCreate = () => {
   const { enqueueSnackbar } = useSnackbar();
   const [createVideo, status] = useCreateVideoMutation();
   const [videoState, setVideoState] = useState<Video>(videoInitialState);
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [categories] = useUniqueCategories(videoState, setVideoState);
   const { data: genres } = useGetAllGenresQuery();
   const { data: cast_members } = useGetAllCastMembersQuery();
@@ -28,6 +29,16 @@ export const VideoCreate = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setVideoState({ ...videoState, [name]: value });
+  };
+
+  const handleAddFile = (files: FileList | null) => {
+    if (!files) return;
+    const filesArray = Array.from(files);
+    setSelectedFiles([...selectedFiles, ...filesArray]);
+  };
+
+  const handleRemoveFile = (file: File) => {
+    setSelectedFiles(selectedFiles.filter((f) => f !== file));
   };
 
   useEffect(() => {
@@ -58,6 +69,8 @@ export const VideoCreate = () => {
           cast_members={cast_members?.data}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
+          handleAddFile={handleAddFile}
+          handleRemoveFile={handleRemoveFile}
           isLoading={status.isLoading}
           isDisabled={status.isLoading}
         />

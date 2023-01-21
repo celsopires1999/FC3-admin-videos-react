@@ -14,6 +14,7 @@ import { CastMember } from "../../../types/CastMember";
 import { Category } from "../../../types/Category";
 import { Genre } from "../../../types/Genre";
 import { Video } from "../../../types/Video";
+import { InputFile } from "./InputFile";
 
 export type Props = {
   video: Video;
@@ -24,6 +25,8 @@ export type Props = {
   isLoading?: boolean;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleAddFile: (files: FileList | null) => void;
+  handleRemoveFile: (file: File) => void;
 };
 export const VideoForm = ({
   video,
@@ -34,6 +37,8 @@ export const VideoForm = ({
   isLoading = false,
   handleSubmit,
   handleChange,
+  handleAddFile,
+  handleRemoveFile,
 }: Props) => {
   return (
     <Box p={2}>
@@ -161,7 +166,19 @@ export const VideoForm = ({
                 </RadioGroup>
               </FormControl>
             </Grid>
+            {/* Files */}
+            <Grid item xs={12}>
+              <FormControl fullWidth>
+                <FormLabel component="legend">Thumb</FormLabel>
+                <InputFile onAdd={handleAddFile} onRemove={handleRemoveFile} />
+              </FormControl>
+              <FormControl fullWidth>
+                <FormLabel component="legend">Videos</FormLabel>
+                <InputFile onAdd={handleAddFile} onRemove={handleRemoveFile} />
+              </FormControl>
+            </Grid>
           </Grid>
+
           {/* Buttons */}
           <Grid container item xs={12}>
             <Box display="flex" gap={2}>
