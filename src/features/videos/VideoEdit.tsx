@@ -72,6 +72,8 @@ export const VideoEdit = () => {
           cast_members={cast_members?.data}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
+          handleAddFile={() => {}}
+          handleRemoveFile={() => {}}
           isLoading={isFetching || status.isLoading}
           isDisabled={status.isLoading}
         />

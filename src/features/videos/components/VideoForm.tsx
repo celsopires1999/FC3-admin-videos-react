@@ -25,7 +25,7 @@ export type Props = {
   isLoading?: boolean;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleAddFile: (files: FileList | null) => void;
+  handleAddFile: (file: File | null) => void;
   handleRemoveFile: (file: File) => void;
 };
 export const VideoForm = ({

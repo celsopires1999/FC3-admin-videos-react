@@ -31,10 +31,9 @@ export const VideoCreate = () => {
     setVideoState({ ...videoState, [name]: value });
   };
 
-  const handleAddFile = (files: FileList | null) => {
-    if (!files) return;
-    const filesArray = Array.from(files);
-    setSelectedFiles([...selectedFiles, ...filesArray]);
+  const handleAddFile = (file: File | null) => {
+    if (!file) return;
+    setSelectedFiles([...selectedFiles, ...[file]]);
   };
 
   const handleRemoveFile = (file: File) => {
