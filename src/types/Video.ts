@@ -2,6 +2,14 @@ import { CastMember } from "./CastMember";
 import { Category } from "./Category";
 import { Genre } from "./Genre";
 
+const Filenames = ["thumbnail", "banner", "trailer", "video"] as const;
+export type Filename = typeof Filenames[number];
+
+export type FileObject = {
+  name: Filename;
+  file: File;
+};
+
 export interface Video {
   id: string;
   title: string;

@@ -2,7 +2,7 @@ import { Box, Paper, Typography } from "@mui/material";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
 import { useUniqueCategories } from "../../hooks/useUniqueCategories";
-import { Video } from "../../types/Video";
+import { Filename, FileObject, Video } from "../../types/Video";
 import { VideoForm } from "./components/VideoForm";
 import { mapVideoPayload } from "./utils";
 import {
@@ -16,7 +16,7 @@ export const VideoCreate = () => {
   const { enqueueSnackbar } = useSnackbar();
   const [createVideo, status] = useCreateVideoMutation();
   const [videoState, setVideoState] = useState<Video>(videoInitialState);
-  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [selectedFiles, setSelectedFiles] = useState<FileObject[]>([]);
   const [categories] = useUniqueCategories(videoState, setVideoState);
   const { data: genres } = useGetAllGenresQuery();
   const { data: cast_members } = useGetAllCastMembersQuery();
@@ -31,13 +31,12 @@ export const VideoCreate = () => {
     setVideoState({ ...videoState, [name]: value });
   };
 
-  const handleAddFile = (file: File | null) => {
-    if (!file) return;
-    setSelectedFiles([...selectedFiles, ...[file]]);
+  const handleAddFile = ({ name, file }: FileObject) => {
+    setSelectedFiles([...selectedFiles, { name, file }]);
   };
 
-  const handleRemoveFile = (file: File) => {
-    setSelectedFiles(selectedFiles.filter((f) => f !== file));
+  const handleRemoveFile = (name: Filename) => {
+    setSelectedFiles(selectedFiles.filter((file) => file.name !== name));
   };
 
   useEffect(() => {

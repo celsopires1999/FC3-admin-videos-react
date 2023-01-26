@@ -4,7 +4,7 @@ import { IconButton, TextField } from "@mui/material";
 import React, { useRef, useState } from "react";
 
 type Props = {
-  onAdd: (file: File | null) => void;
+  onAdd: (file: File) => void;
   onRemove: (file: File) => void;
 };
 

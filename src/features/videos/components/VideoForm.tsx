@@ -13,7 +13,7 @@ import { RatingsList } from "../../../components/RatingsList";
 import { CastMember } from "../../../types/CastMember";
 import { Category } from "../../../types/Category";
 import { Genre } from "../../../types/Genre";
-import { Video } from "../../../types/Video";
+import { Filename, FileObject, Video } from "../../../types/Video";
 import { InputFile } from "./InputFile";
 
 export type Props = {
@@ -25,8 +25,8 @@ export type Props = {
   isLoading?: boolean;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleAddFile: (file: File | null) => void;
-  handleRemoveFile: (file: File) => void;
+  handleAddFile: ({ name, file }: FileObject) => void;
+  handleRemoveFile: (name: Filename) => void;
 };
 export const VideoForm = ({
   video,
@@ -40,45 +40,73 @@ export const VideoForm = ({
   handleAddFile,
   handleRemoveFile,
 }: Props) => {
+  const handleAddThumbnail = (file: File) => {
+    handleAddFile({ name: "thumbnail", file });
+  };
+
+  const handleRemoveThumbnail = () => {
+    handleRemoveFile("thumbnail");
+  };
+
+  const handleAddBanner = (file: File) => {
+    handleAddFile({ name: "banner", file });
+  };
+
+  const handleRemoveBanner = () => {
+    handleRemoveFile("banner");
+  };
+
+  const handleAddTrailer = (file: File) => {
+    handleAddFile({ name: "trailer", file });
+  };
+
+  const handleRemoveTrailer = () => {
+    handleRemoveFile("trailer");
+  };
+
+  const handleAddVideo = (file: File) => {
+    handleAddFile({ name: "video", file });
+  };
+
+  const handleRemoveVideo = () => {
+    handleRemoveFile("video");
+  };
+
   return (
     <Box p={2}>
       <form onSubmit={handleSubmit}>
         {/* Panel */}
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           {/* Left Panel */}
-          <Grid container item spacing={3} xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={{ "& .MuiTextField-root": { my: 2 } }}>
             {/* Title */}
-            <Grid item xs={12}>
-              <FormControl fullWidth>
-                <TextField
-                  required
-                  name="title"
-                  label="Title"
-                  value={video.title}
-                  disabled={isDisabled || isLoading}
-                  onChange={handleChange}
-                  inputProps={{ "data-testid": "title" }}
-                />
-              </FormControl>
-            </Grid>
+            <FormControl fullWidth>
+              <TextField
+                required
+                name="title"
+                label="Title"
+                value={video.title}
+                disabled={isDisabled || isLoading}
+                onChange={handleChange}
+                inputProps={{ "data-testid": "title" }}
+              />
+            </FormControl>
             {/* Description */}
-            <Grid item xs={12}>
-              <FormControl fullWidth>
-                <TextField
-                  required
-                  multiline
-                  minRows={4}
-                  name="description"
-                  label="Description"
-                  value={video.description}
-                  disabled={isDisabled || isLoading}
-                  onChange={handleChange}
-                  inputProps={{ "data-testid": "description" }}
-                />
-              </FormControl>
-            </Grid>
+            <FormControl fullWidth>
+              <TextField
+                required
+                multiline
+                minRows={4}
+                name="description"
+                label="Description"
+                value={video.description}
+                disabled={isDisabled || isLoading}
+                onChange={handleChange}
+                inputProps={{ "data-testid": "description" }}
+              />
+            </FormControl>
             {/* Year and Duration */}
-            <Grid container item spacing={3}>
+            <Grid container spacing={2}>
               {/* Year */}
               <Grid item xs={6}>
                 <FormControl fullWidth>
@@ -121,83 +149,95 @@ export const VideoForm = ({
                 />
               </Grid>
 
-              <Grid container item spacing={3} xs={12} md={12}>
-                {/* Genres  */}
-                <Grid item xs={6} md={6}>
-                  <AutocompleteFields
-                    name={"genres"}
-                    options={genres}
-                    label={"Genres"}
-                    isLoading={isLoading}
-                    isDisabled={isDisabled}
-                    handleChange={handleChange}
-                    value={video.genres ?? []}
-                  />
-                </Grid>
+              <Grid item xs={12}>
+                <Grid
+                  container
+                  alignContent={"center"}
+                  justifyContent={"space-between"}
+                  spacing={2}
+                >
+                  {/* Genres  */}
+                  <Grid item xs={5}>
+                    <AutocompleteFields
+                      name={"genres"}
+                      options={genres}
+                      label={"Genres"}
+                      isLoading={isLoading}
+                      isDisabled={isDisabled}
+                      handleChange={handleChange}
+                      value={video.genres ?? []}
+                    />
+                  </Grid>
 
-                {/* Categories  */}
-                <Grid item xs={6} md={6}>
-                  <AutocompleteFields
-                    name={"categories"}
-                    options={categories}
-                    label={"Categories"}
-                    isLoading={isLoading}
-                    isDisabled={isDisabled}
-                    handleChange={handleChange}
-                    value={video.categories ?? []}
-                  />
+                  {/* Categories  */}
+                  <Grid item xs={5}>
+                    <AutocompleteFields
+                      name={"categories"}
+                      options={categories}
+                      label={"Categories"}
+                      isLoading={isLoading}
+                      isDisabled={isDisabled}
+                      handleChange={handleChange}
+                      value={video.categories ?? []}
+                    />
+                  </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
           {/* Right Panel */}
-          <Grid container item spacing={3} xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={{ "& .MuiTextField-root": { my: 2 } }}>
             {/* Rating */}
-            <Grid item xs={12}>
-              <FormControl>
-                <FormLabel component="legend">Rating</FormLabel>
-                <RadioGroup
-                  row
-                  name="rating"
-                  value={video.rating}
-                  onChange={handleChange}
-                >
-                  <RatingsList isDisabled={isDisabled} />
-                </RadioGroup>
-              </FormControl>
-            </Grid>
-            {/* Files */}
-            <Grid item xs={12}>
-              <FormControl fullWidth>
-                <FormLabel component="legend">Thumb</FormLabel>
-                <InputFile onAdd={handleAddFile} onRemove={handleRemoveFile} />
-              </FormControl>
-              <FormControl fullWidth>
-                <FormLabel component="legend">Videos</FormLabel>
-                <InputFile onAdd={handleAddFile} onRemove={handleRemoveFile} />
-              </FormControl>
-            </Grid>
-          </Grid>
-
-          {/* Buttons */}
-          <Grid container item xs={12}>
-            <Box display="flex" gap={2}>
-              {/* Back */}
-              <Button variant="contained" component={Link} to="/videos">
-                Back
-              </Button>
-              {/* Save */}
-              <Button
-                type="submit"
-                variant="contained"
-                color="secondary"
-                disabled={isDisabled || isLoading}
+            <FormControl fullWidth>
+              <FormLabel component="legend">Rating</FormLabel>
+              <RadioGroup
+                row
+                name="rating"
+                value={video.rating}
+                onChange={handleChange}
               >
-                {isLoading ? "Loading..." : "Save"}
-              </Button>
-            </Box>
+                <RatingsList isDisabled={isDisabled} />
+              </RadioGroup>
+            </FormControl>
+            {/* Files */}
+            <FormControl fullWidth>
+              <FormLabel component="legend">Thumbnail</FormLabel>
+              <InputFile
+                onAdd={handleAddThumbnail}
+                onRemove={handleRemoveThumbnail}
+              />
+              <FormLabel component="legend">Banner</FormLabel>
+              <InputFile
+                onAdd={handleAddBanner}
+                onRemove={handleRemoveBanner}
+              />
+              <FormLabel component="legend">Trailer</FormLabel>
+              <InputFile
+                onAdd={handleAddTrailer}
+                onRemove={handleRemoveTrailer}
+              />
+              <FormLabel component="legend">Video</FormLabel>
+              <InputFile onAdd={handleAddVideo} onRemove={handleRemoveVideo} />
+            </FormControl>
           </Grid>
         </Grid>
+
+        {/* Buttons */}
+        <Box display="flex" sx={{ my: 2 }} gap={2}>
+          {/* Back */}
+          <Button variant="contained" component={Link} to="/videos">
+            Back
+          </Button>
+          {/* Save */}
+          <Button
+            type="submit"
+            variant="contained"
+            color="secondary"
+            disabled={isDisabled || isLoading}
+          >
+            {isLoading ? "Loading..." : "Save"}
+          </Button>
+        </Box>
       </form>
     </Box>
   );
