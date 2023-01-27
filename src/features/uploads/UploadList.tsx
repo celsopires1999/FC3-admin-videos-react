@@ -1,3 +1,4 @@
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Accordion,
   AccordionDetails,
@@ -7,15 +8,15 @@ import {
   ListItem,
   Typography,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { LinearWithValueLabel } from "../../components/Progress";
 import { Filename } from "../../types/Video";
 
-export type Upload = {
+type Upload = {
   name: Filename;
   progress: number;
 };
 
-export type Props = {
+type Props = {
   children?: React.ReactNode;
   uploads?: Upload[];
 };
@@ -48,9 +49,12 @@ export const UploadList = ({ children, uploads }: Props) => {
         <AccordionDetails>
           <List>
             {uploads.map((upload, index) => (
-              <ListItem key={index}>
+              <Box key={index}>
                 <Typography>{upload.name}</Typography>
-              </ListItem>
+                <ListItem key={index}>
+                  <LinearWithValueLabel />
+                </ListItem>
+              </Box>
             ))}
           </List>
         </AccordionDetails>
