@@ -1,8 +1,11 @@
 import { Box, Paper, Typography } from "@mui/material";
+import { nanoid } from "nanoid";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
+import { useAppDispatch } from "../../app/hooks";
 import { useUniqueCategories } from "../../hooks/useUniqueCategories";
 import { Filename, FileObject, Video } from "../../types/Video";
+import { addUpload } from "../uploads/UploadSlice";
 import { VideoForm } from "./components/VideoForm";
 import { mapVideoPayload } from "./utils";
 import {
@@ -20,6 +23,7 @@ export const VideoCreate = () => {
   const [categories] = useUniqueCategories(videoState, setVideoState);
   const { data: genres } = useGetAllGenresQuery();
   const { data: cast_members } = useGetAllCastMembersQuery();
+  const dispatch = useAppDispatch();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
