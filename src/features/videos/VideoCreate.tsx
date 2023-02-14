@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../app/hooks";
 import { useUniqueCategories } from "../../hooks/useUniqueCategories";
 import { Filename, FileObject, Video } from "../../types/Video";
-import { addUpload } from "../uploads/UploadSlice";
+import { addUpload, removeUpload } from "../uploads/UploadSlice";
 import { VideoForm } from "./components/VideoForm";
 import { mapVideoPayload } from "./utils";
 import {
