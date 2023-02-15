@@ -8,21 +8,14 @@ import {
   ListItem,
   Typography,
 } from "@mui/material";
-import { LinearWithValueLabel } from "../../components/Progress";
-import { Filename } from "../../types/Video";
+import { useAppSelector } from "../../app/hooks";
+import { LinearProgressWithLabel } from "../../components/Progress";
+import { selectUploads } from "./UploadSlice";
 
-type Upload = {
-  name: Filename;
-  progress: number;
-};
+export const UploadList = () => {
+  const uploadList = useAppSelector(selectUploads);
 
-type Props = {
-  children?: React.ReactNode;
-  uploads?: Upload[];
-};
-
-export const UploadList = ({ children, uploads }: Props) => {
-  if (!uploads || uploads.length === 0) {
+  if (!uploadList || uploadList.length === 0) {
     return null;
   }
 
@@ -48,11 +41,13 @@ export const UploadList = ({ children, uploads }: Props) => {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            {uploads.map((upload, index) => (
+            {uploadList.map((upload, index) => (
               <Box key={index}>
-                <Typography>{upload.name}</Typography>
+                <Typography>{upload.field}</Typography>
                 <ListItem key={index}>
-                  <LinearWithValueLabel />
+                  <Box sx={{ width: "100%" }}>
+                    <LinearProgressWithLabel value={upload.progress ?? 0} />
+                  </Box>
                 </ListItem>
               </Box>
             ))}
