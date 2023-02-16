@@ -30,7 +30,8 @@ export const VideoEdit = () => {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await updateVideo(mapVideoPayload(videoState));
+    const { id, videoPayload } = mapVideoPayload(videoState);
+    await updateVideo({ id, videoPayload });
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

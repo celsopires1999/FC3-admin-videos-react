@@ -71,9 +71,15 @@ function createVideo(videoPayload: VideoPayload) {
   };
 }
 
-function updateVideo(videoPayload: VideoPayload) {
+function updateVideo({
+  id,
+  videoPayload,
+}: {
+  id: string;
+  videoPayload: VideoPayload;
+}) {
   return {
-    url: `${endpointUrl}/${videoPayload.id}`,
+    url: `${endpointUrl}/${id}`,
     method: "PUT",
     headers: {
       accept: "application/json",
@@ -127,7 +133,7 @@ export const videosApiSlice = apiSlice.injectEndpoints({
       query: createVideo,
       invalidatesTags: ["Videos"],
     }),
-    updateVideo: mutation<Result, VideoPayload>({
+    updateVideo: mutation<Result, { id: string; videoPayload: VideoPayload }>({
       query: updateVideo,
       invalidatesTags: ["Videos"],
     }),

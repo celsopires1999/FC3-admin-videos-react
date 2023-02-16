@@ -5,11 +5,7 @@ import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../app/hooks";
 import { useUniqueCategories } from "../../hooks/useUniqueCategories";
 import { Filename, FileObject, Video } from "../../types/Video";
-import {
-  addUpload,
-  removeUpload,
-  setUploadProgress,
-} from "../uploads/UploadSlice";
+import { addUpload } from "../uploads/UploadSlice";
 import { VideoForm } from "./components/VideoForm";
 import { mapVideoPayload } from "./utils";
 import {
@@ -31,7 +27,20 @@ export const VideoCreate = () => {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await createVideo(mapVideoPayload(videoState));
+    const { videoPayload } = mapVideoPayload(videoState);
+    try {
+      const { data } = await createVideo(videoPayload).unwrap();
+      handleSubmitUploads(data.id);
+    } catch (e) {
+      enqueueSnackbar(`Video not created`, { variant: "error" });
+    }
+  }
+
+  function handleSubmitUploads(videoId: string) {
+    selectedFiles.forEach(({ file, name }) => {
+      const payload = { id: nanoid(), file, videoId, field: name };
+      dispatch(addUpload(payload));
+    });
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
