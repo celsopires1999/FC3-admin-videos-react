@@ -89,50 +89,122 @@ exports[`Layout should render layout correctly 1`] = `
               >
                 Codeflix
               </div>
-              <hr
-                class="MuiDivider-root MuiDivider-fullWidth css-rr7dug-MuiDivider-root"
-              />
-              <ul
-                class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+            </div>
+            <hr
+              class="MuiDivider-root MuiDivider-fullWidth css-rr7dug-MuiDivider-root"
+            />
+            <ul
+              class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+            >
+              <a
+                href="/"
+                style="text-decoration: none;"
               >
                 <li
                   class="MuiListItem-root MuiListItem-gutters css-6rhc8g-MuiListItem-root"
                 >
-                  <p
-                    class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                  <div
+                    class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-squjnr-MuiButtonBase-root-MuiListItemButton-root"
+                    role="button"
+                    tabindex="0"
                   >
-                    Categories
-                  </p>
+                    <div
+                      class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+                    >
+                      <span
+                        class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+                      >
+                        Categories
+                      </span>
+                    </div>
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </div>
                 </li>
+              </a>
+              <a
+                href="/cast-members"
+                style="text-decoration: none;"
+              >
                 <li
                   class="MuiListItem-root MuiListItem-gutters css-6rhc8g-MuiListItem-root"
                 >
-                  <p
-                    class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                  <div
+                    class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-squjnr-MuiButtonBase-root-MuiListItemButton-root"
+                    role="button"
+                    tabindex="0"
                   >
-                    Cast Members
-                  </p>
+                    <div
+                      class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+                    >
+                      <span
+                        class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+                      >
+                        Cast Members
+                      </span>
+                    </div>
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </div>
                 </li>
+              </a>
+              <a
+                href="/genres"
+                style="text-decoration: none;"
+              >
                 <li
                   class="MuiListItem-root MuiListItem-gutters css-6rhc8g-MuiListItem-root"
                 >
-                  <p
-                    class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                  <div
+                    class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-squjnr-MuiButtonBase-root-MuiListItemButton-root"
+                    role="button"
+                    tabindex="0"
                   >
-                    Genres
-                  </p>
+                    <div
+                      class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+                    >
+                      <span
+                        class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+                      >
+                        Genres
+                      </span>
+                    </div>
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </div>
                 </li>
+              </a>
+              <a
+                href="/videos"
+                style="text-decoration: none;"
+              >
                 <li
                   class="MuiListItem-root MuiListItem-gutters css-6rhc8g-MuiListItem-root"
                 >
-                  <p
-                    class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                  <div
+                    class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-squjnr-MuiButtonBase-root-MuiListItemButton-root"
+                    role="button"
+                    tabindex="0"
                   >
-                    Videos
-                  </p>
+                    <div
+                      class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+                    >
+                      <span
+                        class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+                      >
+                        Videos
+                      </span>
+                    </div>
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </div>
                 </li>
-              </ul>
-            </div>
+              </a>
+            </ul>
           </div>
         </div>
       </div>

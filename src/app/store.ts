@@ -9,8 +9,9 @@ import { apiSlice } from "../features/api/apiSlice";
 import { castMembersApiSlice } from "../features/cast-members/CastMemberSlice";
 import { categoriesApiSlice } from "../features/categories/categorySlice";
 import { genresApiSlice } from "../features/genres/GenreSlice";
-import { videosApiSlice } from "../features/videos/VideoSlice";
 import { uploadReducer } from "../features/uploads/UploadSlice";
+import { videosApiSlice } from "../features/videos/VideoSlice";
+import { uploadQueue } from "../middlewares/uploadQueue";
 
 const rootReducer = combineReducers({
   [apiSlice.reducerPath]: apiSlice.reducer,
@@ -26,9 +27,9 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
     reducer: rootReducer,
     preloadedState,
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware({ serializableCheck: false }).concat(
-        apiSlice.middleware
-      ),
+      getDefaultMiddleware({ serializableCheck: false })
+        .prepend(uploadQueue.middleware)
+        .concat(apiSlice.middleware),
   });
 };
 
