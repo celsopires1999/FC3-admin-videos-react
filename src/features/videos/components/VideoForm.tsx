@@ -41,35 +41,35 @@ export const VideoForm = ({
   handleRemoveFile,
 }: Props) => {
   const handleAddThumbnail = (file: File) => {
-    handleAddFile({ name: "thumbnail", file });
+    handleAddFile({ name: "thumb_file", file });
   };
 
   const handleRemoveThumbnail = () => {
-    handleRemoveFile("thumbnail");
+    handleRemoveFile("thumb_file");
   };
 
   const handleAddBanner = (file: File) => {
-    handleAddFile({ name: "banner", file });
+    handleAddFile({ name: "banner_file", file });
   };
 
   const handleRemoveBanner = () => {
-    handleRemoveFile("banner");
+    handleRemoveFile("banner_file");
   };
 
   const handleAddTrailer = (file: File) => {
-    handleAddFile({ name: "trailer", file });
+    handleAddFile({ name: "trailer_file", file });
   };
 
   const handleRemoveTrailer = () => {
-    handleRemoveFile("trailer");
+    handleRemoveFile("trailer_file");
   };
 
   const handleAddVideo = (file: File) => {
-    handleAddFile({ name: "video", file });
+    handleAddFile({ name: "video_file", file });
   };
 
   const handleRemoveVideo = () => {
-    handleRemoveFile("video");
+    handleRemoveFile("video_file");
   };
 
   return (

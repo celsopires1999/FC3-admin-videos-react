@@ -2,7 +2,12 @@ import { CastMember } from "./CastMember";
 import { Category } from "./Category";
 import { Genre } from "./Genre";
 
-const Filenames = ["thumbnail", "banner", "trailer", "video"] as const;
+const Filenames = [
+  "thumb_file",
+  "banner_file",
+  "trailer_file",
+  "video_file",
+] as const;
 export type Filename = typeof Filenames[number];
 
 export type FileObject = {
@@ -66,16 +71,12 @@ export interface VideoParams {
 
 export interface VideoPayload {
   title: string;
-  description: string;
-  year_launched: number;
-  opened: boolean;
   rating: string;
+  opened: boolean;
   duration: number;
-  categories_id?: string[];
+  description: string;
   genres_id?: string[];
+  year_launched: number;
+  categories_id?: string[];
   cast_members_id?: string[];
-  thumb_file_URL: string;
-  banner_file_URL: string;
-  trailer_file_URL: string;
-  video_file_URL: string;
 }
