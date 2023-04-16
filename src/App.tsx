@@ -1,10 +1,9 @@
 import { Typography } from "@mui/material";
-import { Box, ThemeProvider } from "@mui/system";
-import { SnackbarProvider } from "notistack";
+import { Box } from "@mui/system";
 import { Route, Routes } from "react-router-dom";
-import { Header } from "./components/Header";
 import { Layout } from "./components/Layout";
-import { appTheme } from "./config/theme";
+import { Login } from "./components/Login";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 import { CastMemberCreate } from "./features/cast-members/CastMemberCreate";
 import { CastMemberEdit } from "./features/cast-members/CastMemberEdit";
 import { CastMemberList } from "./features/cast-members/CastMemberList";
@@ -14,62 +13,142 @@ import { CategoryList } from "./features/categories/CategoryList";
 import { GenreCreate } from "./features/genres/GenreCreate";
 import { GenreEdit } from "./features/genres/GenreEdit";
 import { GenreList } from "./features/genres/GenreList";
+import { UploadList } from "./features/uploads/UploadList";
+import { VideoCreate } from "./features/videos/VideoCreate";
+import { VideoEdit } from "./features/videos/VideoEdit";
+import { VideoList } from "./features/videos/VideoList";
 
 function App() {
   return (
-    <ThemeProvider theme={appTheme}>
-      <SnackbarProvider
-        autoHideDuration={2000}
-        maxSnack={3}
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      >
-        <Box
-          component="main"
-          sx={{
-            height: "100vh",
-            minHeight: 650,
-            backgroundColor: (theme) => theme.palette.grey[900],
-          }}
-        >
-          <Header />
-          <Layout>
-            <Routes>
-              <Route path="/" element={<CategoryList />} />
-              {/* Category */}
-              <Route path="/categories" element={<CategoryList />} />
-              <Route path="/categories/create" element={<CategoryCreate />} />
-              <Route path="/categories/edit/:id" element={<CategoryEdit />} />
+    <Layout>
+      <UploadList />
+      <Routes>
+        {/* Login */}
+        <Route path="/login" element={<Login />} />
+        {/* Category is the default route  */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <CategoryList />
+            </ProtectedRoute>
+          }
+        />
+        {/* Category */}
+        <Route
+          path="/categories"
+          element={
+            <ProtectedRoute>
+              <CategoryList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/categories/create"
+          element={
+            <ProtectedRoute>
+              <CategoryCreate />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/categories/edit/:id"
+          element={
+            <ProtectedRoute>
+              <CategoryEdit />
+            </ProtectedRoute>
+          }
+        />
 
-              {/* Cast Members */}
-              <Route path="/cast-members" element={<CastMemberList />} />
-              <Route
-                path="/cast-members/create"
-                element={<CastMemberCreate />}
-              />
-              <Route
-                path="/cast-members/edit/:id"
-                element={<CastMemberEdit />}
-              />
+        {/* Cast Members */}
+        <Route
+          path="/cast-members"
+          element={
+            <ProtectedRoute>
+              <CastMemberList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cast-members/create"
+          element={
+            <ProtectedRoute>
+              <CastMemberCreate />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cast-members/edit/:id"
+          element={
+            <ProtectedRoute>
+              <CastMemberEdit />
+            </ProtectedRoute>
+          }
+        />
 
-              {/* Genres */}
-              <Route path="/genres" element={<GenreList />} />
-              <Route path="/genres/create" element={<GenreCreate />} />
-              <Route path="/genres/edit/:id" element={<GenreEdit />} />
+        {/* Genres */}
+        <Route
+          path="/genres"
+          element={
+            <ProtectedRoute>
+              <GenreList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/genres/create"
+          element={
+            <ProtectedRoute>
+              <GenreCreate />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/genres/edit/:id"
+          element={
+            <ProtectedRoute>
+              <GenreEdit />
+            </ProtectedRoute>
+          }
+        />
 
-              <Route
-                path="*"
-                element={
-                  <Box sx={{ color: "white" }}>
-                    <Typography variant="h1">404</Typography>
-                    <Typography variant="h2">Page not found</Typography>
-                  </Box>
-                }
-              />
-            </Routes>
-          </Layout>
-        </Box>
-      </SnackbarProvider>
-    </ThemeProvider>
+        {/* Videos */}
+        <Route
+          path="/videos"
+          element={
+            <ProtectedRoute>
+              <VideoList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/videos/create"
+          element={
+            <ProtectedRoute>
+              <VideoCreate />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/videos/edit/:id"
+          element={
+            <ProtectedRoute>
+              <VideoEdit />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="*"
+          element={
+            <Box sx={{ color: "white" }}>
+              <Typography variant="h1">404</Typography>
+              <Typography variant="h2">Page not found</Typography>
+            </Box>
+          }
+        />
+      </Routes>
+    </Layout>
   );
 }
 

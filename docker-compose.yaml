@@ -11,3 +11,15 @@ services:
       - 3000:3000
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
+
+  keycloak:
+    image: jboss/keycloak:16.1.1
+    container_name: micro-codeflix-keycloak
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+      - DB_VENDOR=h2
+    volumes:
+      - ./.docker/keycloak:/opt/jboss/keycloak/standalone/data
+    ports:
+      - 8181:8080
