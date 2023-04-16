@@ -2,6 +2,8 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
+import { Login } from "./components/Login";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 import { CastMemberCreate } from "./features/cast-members/CastMemberCreate";
 import { CastMemberEdit } from "./features/cast-members/CastMemberEdit";
 import { CastMemberList } from "./features/cast-members/CastMemberList";
@@ -21,26 +23,120 @@ function App() {
     <Layout>
       <UploadList />
       <Routes>
-        <Route path="/" element={<CategoryList />} />
+        {/* Login */}
+        <Route path="/login" element={<Login />} />
+        {/* Category is the default route  */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <CategoryList />
+            </ProtectedRoute>
+          }
+        />
         {/* Category */}
-        <Route path="/categories" element={<CategoryList />} />
-        <Route path="/categories/create" element={<CategoryCreate />} />
-        <Route path="/categories/edit/:id" element={<CategoryEdit />} />
+        <Route
+          path="/categories"
+          element={
+            <ProtectedRoute>
+              <CategoryList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/categories/create"
+          element={
+            <ProtectedRoute>
+              <CategoryCreate />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/categories/edit/:id"
+          element={
+            <ProtectedRoute>
+              <CategoryEdit />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Cast Members */}
-        <Route path="/cast-members" element={<CastMemberList />} />
-        <Route path="/cast-members/create" element={<CastMemberCreate />} />
-        <Route path="/cast-members/edit/:id" element={<CastMemberEdit />} />
+        <Route
+          path="/cast-members"
+          element={
+            <ProtectedRoute>
+              <CastMemberList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cast-members/create"
+          element={
+            <ProtectedRoute>
+              <CastMemberCreate />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cast-members/edit/:id"
+          element={
+            <ProtectedRoute>
+              <CastMemberEdit />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Genres */}
-        <Route path="/genres" element={<GenreList />} />
-        <Route path="/genres/create" element={<GenreCreate />} />
-        <Route path="/genres/edit/:id" element={<GenreEdit />} />
+        <Route
+          path="/genres"
+          element={
+            <ProtectedRoute>
+              <GenreList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/genres/create"
+          element={
+            <ProtectedRoute>
+              <GenreCreate />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/genres/edit/:id"
+          element={
+            <ProtectedRoute>
+              <GenreEdit />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Videos */}
-        <Route path="/videos" element={<VideoList />} />
-        <Route path="/videos/create" element={<VideoCreate />} />
-        <Route path="/videos/edit/:id" element={<VideoEdit />} />
+        <Route
+          path="/videos"
+          element={
+            <ProtectedRoute>
+              <VideoList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/videos/create"
+          element={
+            <ProtectedRoute>
+              <VideoCreate />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/videos/edit/:id"
+          element={
+            <ProtectedRoute>
+              <VideoEdit />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="*"
