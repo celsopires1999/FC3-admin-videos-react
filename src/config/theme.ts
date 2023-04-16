@@ -10,6 +10,15 @@ export const darkTheme = createTheme({
     secondary: { main: "#e50914" },
     text: { primary: "#f5f5f1" },
   },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          background: "#222222",
+        },
+      },
+    },
+  },
 });
 
 export const lightTheme = createTheme({

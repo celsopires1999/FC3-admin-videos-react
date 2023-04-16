@@ -35,8 +35,18 @@ export function KeycloakProvider({ children }: Props) {
       }
     };
 
+    const updateToken = (refresh = false) => {
+      if (refresh) {
+        keycloak.updateToken(70).then((refreshed) => {
+          if (refreshed) {
+            dispatch(setToken(keycloak.token));
+          }
+        });
+      }
+    };
+
     keycloak.onTokenExpired = () => {
-      return null;
+      updateToken(true);
     };
 
     initKeycloak();
