@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { setupStore } from "./app/store";
 import "./index.css";
-import { KeycloakProvider } from "./providers/keycloakProvider";
+import { KeycloakProvider } from "./providers/KeycloakProvider";
 import reportWebVitals from "./reportWebVitals";
 
 const container = document.getElementById("root")!;

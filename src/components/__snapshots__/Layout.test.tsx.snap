@@ -6,7 +6,7 @@ exports[`Layout should render layout correctly 1`] = `
     class="MuiBox-root css-k008qs"
   >
     <header
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorInherit MuiAppBar-positionFixed mui-fixed css-1f5e8rc-MuiPaper-root-MuiAppBar-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorInherit MuiAppBar-positionFixed mui-fixed css-i1tk7r-MuiPaper-root-MuiAppBar-root"
     >
       <div
         class="MuiBox-root css-0"
@@ -63,7 +63,7 @@ exports[`Layout should render layout correctly 1`] = `
             tabindex="0"
             type="button"
           >
-            Login
+            Logout
             <span
               class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
             />
@@ -78,7 +78,7 @@ exports[`Layout should render layout correctly 1`] = `
         class="MuiDrawer-root MuiDrawer-docked css-d9ml5t-MuiDrawer-docked"
       >
         <div
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft css-y8zhcg-MuiPaper-root-MuiDrawer-paper"
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft css-175b4hf-MuiPaper-root-MuiDrawer-paper"
         >
           <div>
             <div

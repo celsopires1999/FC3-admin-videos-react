@@ -57,7 +57,7 @@ exports[`Header should render header correctly 1`] = `
         tabindex="0"
         type="button"
       >
-        Login
+        Logout
         <span
           class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
         />
